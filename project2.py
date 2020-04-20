@@ -21,6 +21,7 @@ photo = PhotoImage()
 pLabel = Label(window, image = photo)
 pLabel.pack(expand=1, anchor = CENTER)
 
+## 메뉴설정 ##
 mainMenu = Menu(window)
 window.config(menu = mainMenu)
 fileMenu = Menu(mainMenu)
