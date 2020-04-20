@@ -30,4 +30,3 @@ fileMenu.add_separator()
 fileMenu.add_command(label = "프로그램 종료", command = func_exit)
 
 window.mainloop()
-#commit - push
