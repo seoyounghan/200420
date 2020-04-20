@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51386675-3723-4185-b4a4-95e71e139f65" name="Default Changelist" comment="0420#test2">
+    <list default="true" id="51386675-3723-4185-b4a4-95e71e139f65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2.py" beforeDir="false" afterPath="$PROJECT_DIR$/project2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +75,28 @@
       <option name="project" value="LOCAL" />
       <updated>1587370693150</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="0420#test2">
+      <created>1587374124436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587374124436</updated>
+    </task>
+    <task id="LOCAL-00004" summary="0420#test3">
+      <created>1587374281744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587374281744</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0420#test" />
     <MESSAGE value="0420#test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="0420#test2" />
+    <MESSAGE value="0420#test3" />
+    <option name="LAST_COMMIT_MESSAGE" value="0420#test3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="396" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587370581460">
@@ -91,15 +107,15 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="370" y="0" key="#project2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587371011938" />
-    <state x="293" y="0" key="CommitChangelistDialog2" timestamp="1587374123497">
+    <state x="293" y="0" key="CommitChangelistDialog2" timestamp="1587374280792">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587374123497" />
+    <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587374280792" />
     <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1587368851818" />
-    <state x="233" y="94" key="Vcs.Push.Dialog.v2" timestamp="1587374251852">
+    <state x="233" y="94" key="Vcs.Push.Dialog.v2" timestamp="1587374348063">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587374251852" />
+    <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587374348063" />
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1587368902541" />
     <state x="363" y="272" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1587370535484">
       <screen x="0" y="0" width="1280" height="720" />
