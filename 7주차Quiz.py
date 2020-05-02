@@ -59,6 +59,17 @@ def func_open() :
     loadImage(filename)
     displayImage(inImage)
 
+def reverse():
+    global inImage, XSIZE, YSIZE
+    rgbString = ""
+    for i in range(0, XSIZE):
+        tmpString = ""
+        for k in range(0, YSIZE):
+            data = 255 - inImage[i][k]
+            tmpString += "#%02x%02x%02x " % (data, data, data)  # x 뒤에 한칸 공백, 16진수 문자열로 만듦
+        rgbString += "{" + tmpString + "} "  # } 뒤에 한칸 공백
+    paper.put(rgbString)
+
 
 ## 전역 변수 선언 부분 ##
 window = None
@@ -85,7 +96,7 @@ effectmenu.add_command(label = "밝게 하기", command = brighter)
 effectmenu.add_separator()
 effectmenu.add_command(label = "어둡게 하기", command = darker)
 effectmenu.add_separator()
-effectmenu.add_command(label = "반전 이미지")
+effectmenu.add_command(label = "반전 이미지", command = reverse)
 effectmenu.add_separator()
 
 # 메모리 --> 화면
