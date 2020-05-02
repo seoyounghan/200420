@@ -16,7 +16,6 @@ def brighter() :
         rgbString += "{" + tmpString +  "} " # } 뒤에 한칸 공백
     paper.put(rgbString)
 
-
 def darker() :
     global inImage, XSIZE, YSIZE
     rgbString = ""
@@ -28,6 +27,17 @@ def darker() :
                 data = 0
             tmpString += "#%02x%02x%02x " % (data, data, data) # x 뒤에 한칸 공백, 16진수 문자열로 만듦
         rgbString += "{" + tmpString +  "} " # } 뒤에 한칸 공백
+    paper.put(rgbString)
+
+def reverse():
+    global inImage, XSIZE, YSIZE
+    rgbString = ""
+    for i in range(0, XSIZE):
+        tmpString = ""
+        for k in range(0, YSIZE):
+            data = 255 - inImage[i][k]
+            tmpString += "#%02x%02x%02x " % (data, data, data)  # x 뒤에 한칸 공백, 16진수 문자열로 만듦
+        rgbString += "{" + tmpString + "} "  # } 뒤에 한칸 공백
     paper.put(rgbString)
 
 def loadImage(fname) :
@@ -58,18 +68,6 @@ def func_open() :
     filename = askopenfilename(parent = window, filetypes = (("raw 파일", "*.raw"), ("모든 파일", "*.*")))
     loadImage(filename)
     displayImage(inImage)
-
-def reverse():
-    global inImage, XSIZE, YSIZE
-    rgbString = ""
-    for i in range(0, XSIZE):
-        tmpString = ""
-        for k in range(0, YSIZE):
-            data = 255 - inImage[i][k]
-            tmpString += "#%02x%02x%02x " % (data, data, data)  # x 뒤에 한칸 공백, 16진수 문자열로 만듦
-        rgbString += "{" + tmpString + "} "  # } 뒤에 한칸 공백
-    paper.put(rgbString)
-
 
 ## 전역 변수 선언 부분 ##
 window = None
