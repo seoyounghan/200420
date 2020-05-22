@@ -7,7 +7,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = " "
 
-    con = sqlite3.connect("C:/Users/82102/Downloads/sqlite-tools-win32-x86-3310100/Turtle")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/Turtle")  # DB가 저장된 폴더까지 지정
     cur = con.cursor()
 
     sql = "INSERT INTO Turtle VALUES(" + str(ID) + "," + str(r) + "," + str(g) + "," + str(b) + "," + str(
@@ -20,7 +20,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
 
 def ReversePaint():  ##순서 거꾸로 그리기
     sql = ""
-    con = sqlite3.connect("C:/Users/82102/Downloads/sqlite-tools-win32-x86-3310100/Turtle")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/Turtle")  # DB가 저장된 폴더까지 지정
     cur = con.cursor()
     sql = "SELECT R, G, B, X, Y FROM Turtle WHERE lineID=" + str(ID) + " AND Turn=" + str(j)
     cur.execute(sql)
@@ -95,8 +95,6 @@ while True:
             break
 
 turtle.clear()
-print(turn)
-print(ID)
 
 for i in range(ID, 0, -1):
     for j in range(turn[ID], 1, -1):
