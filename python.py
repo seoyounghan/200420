@@ -3,7 +3,7 @@ from tkinter import*
 window = Tk()
 
 window.title("아마추어를 위한 타구 분석 프로그램")
-window.geometry("700x400")
+window.geometry("740x400")
 window.resizable(False, False)
 
 mainMenu = Menu(window)
@@ -23,8 +23,7 @@ canvas.pack(fill="both", side=LEFT)
 #마우스 클릭
 def clickLeft(event) :
     print(event.x, event.y)
-    if event.x<=560: #야구장에 입력되야하는 범위 x<=560으로 지정
-        canvas.create_oval(event.x - 3, event.y - 3, event.x + 3, event.y + 3, fill="red")
+    canvas.create_oval(event.x - 3, event.y - 3, event.x + 3, event.y + 3, fill="red")
 
 
 #메뉴 설정
@@ -39,20 +38,39 @@ button1=Button(window, text="입력", relief="groove", bg="skyblue")
 button1.place(x=570, y=20)
 button2=Button(window, text="분석", relief="groove", bg="red")
 button2.place(x=610, y=20)
+button3=Button(window, text="수비 추천", relief="groove", bg="gray")
+button3.place(x=650, y=20)
 
-label1=Label(window, text="투수 정보", relief="groove")
-label1.place(x=570, y=70)
-label1=Label(window, text="타구 정보", relief="groove")
-label1.place(x=570, y=120)
-label1=Label(window, text="타자 정보", relief="groove")
-label1.place(x=570, y=170)
-
+label1=Label(window, text="  투수 이름  ", relief="groove")
+label1.place(x=570, y=80)
 entry1=Entry(window, width=16) #투수정보
-entry1.place(x=570, y=90)
-entry2=Entry(window, width=16) #타구정보
-entry2.place(x=570, y=140)
-entry3=Entry(window, width=16) #타자정보
-entry3.place(x=570, y=190)
+entry1.place(x=570, y=103)
+button4=Button(window, text="입력", relief="groove", bg="gray")
+button4.place(x=690, y=100)
+
+label2=Label(window, text=" 투수 정보 선택 ", relief="groove")
+label2.place(x=570, y=150)
+button5=Button(window, text="   좌투   ", relief="groove", bg="gray")
+button5.place(x=570, y=175)
+button6=Button(window, text="   우투   ", relief="groove", bg="gray")
+button6.place(x=640, y=175)
+
+
+label3=Label(window, text="  구종 선택  ", relief="groove")
+label3.place(x=570, y=230)
+button7=Button(window, text="   직구   ", relief="groove", bg="gray")
+button7.place(x=570, y=255)
+button8=Button(window, text="슬라이더", relief="groove", bg="gray")
+button8.place(x=640, y=255)
+
+
+label4=Label(window, text="  타자 이름  ", relief="groove")
+label4.place(x=570, y=310)
+entry2=Entry(window, width=16) #타자정보
+entry2.place(x=570, y=333)
+button9=Button(window, text="입력", relief="groove", bg="gray")
+button9.place(x=690, y=330)
+
 
 
 i=1 #list 순서
@@ -68,7 +86,7 @@ def delete(i):
     i=i-1
 
 
-window.bind("<Button-1>", clickLeft)
+canvas.bind("<Button-1>", clickLeft)
 
 
 #label_image.pack(side=LEFT)
