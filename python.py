@@ -105,7 +105,15 @@ def clickbutton1(): #입력 버튼
 #        canvas.delete()
 
 def messageask():
-    messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+    if ans== "yes":
+        canvas.delete("all")
+        canvas.create_image(280, 200, image=photo)
+        print("확인")
+        SaveLine()
+        print("저장됨")
+        PrintData()
+        print("출력")
 
 
 #메뉴 설정
@@ -161,12 +169,25 @@ button9.place(x=690, y=330)
 
 #데이터베이스 설정
 def SaveLine():  ##데이터베이스에 데이터 저장
-
-    sql = "INSERT INTO userData VALUES(" + pitcherName + "," + pitcherType + "," + pitchType + "," + batterName + "," + xPoint + "," + yPoint + ");"
-
+    sql = "INSERT INTO userData VALUES(" + str(pitcherName) + "," + str(pitcherType) + "," + str(pitchType) + "," + str(batterName) + "," + str(xPoint) + "," + str(yPoint) + ");"
     cur.execute(sql)
-
     con.commit()
+    con.close()
+
+def PrintData():
+    cur.execute("SELECT * FROM userData")
+    print("타자 이름     투수 정보     구종      투수 이름")
+    print("-----------------------------------------------")
+    data1, data2, data3, data4="","","",""
+    while(True):
+        row=cur.fetchone()
+        if row==None:
+            break;
+        data1=row[0]
+        data2=row[1]
+        data3=row[2]
+        data4=row[3]
+        print("%5s   %d    %d    %15s"%(data1, data2, data3, data4))
     con.close()
 
 
