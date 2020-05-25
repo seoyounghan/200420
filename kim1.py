@@ -11,7 +11,7 @@ pitchTypeinput = input() #사용자로부터 입력받은 투구종류의 변수
 pitcherNameinput = input() #사용자로부터 입력받은 투수이름의 변수
 
 mainpointX = 276 #분포도에서 기준이 되는 시작 좌표의 값
-mainpointY = 377
+mainpointY = 377 #y값
 
 #메인 코드
 con = sqlite3.connect(r"C:\sqlite\userData")
