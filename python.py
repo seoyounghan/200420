@@ -97,8 +97,7 @@ def clickbutton9(): #타자 이름
 
 #맨 위 입력 버튼으로 데이터베이스에 데이터 저장
 
-def clickbutton1(): #입력 버튼
-    print("안녕")
+#def clickbutton1(): #입력 버튼
 
 #    if ans==True:
 #        SaveLine()
@@ -109,11 +108,11 @@ def messageask():
     if ans== "yes":
         canvas.delete("all")
         canvas.create_image(280, 200, image=photo)
-        print("확인")
-        SaveLine()
-        print("저장됨")
-        PrintData()
-        print("출력")
+        #print("확인")
+        #SaveLine()
+        #print("저장됨")
+        #PrintData()
+        #print("출력")
 
 
 #메뉴 설정
