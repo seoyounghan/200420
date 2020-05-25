@@ -122,9 +122,14 @@ def input_messageask():
 
 
 def analyse_messageask():
-    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
-    if ans== "yes":
-        canvas.delete("all")
+    if pitcherType == 1:
+        ans=messagebox.askquestion("확인", "투수 정보: 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+            if ans== "yes":
+                canvas.delete("all")
+
+    elif pitcherType == 2:
+        ans=messagebox.askquestion("확인", "투수 정보: 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+
 
 
 #메뉴 설정

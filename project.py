@@ -88,6 +88,127 @@ def clickbutton9(): #타자 이름
     print(entry2.get())
 
 
+##데이터 select(고정값: 타자 이름/ 변수: 투수포지션/구종/투수이름)
+
+##select함수
+def selectData(sql):
+    XPOINT, YPOINT = [], []
+    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    while (True):
+        row = cur.fetchone()
+        if row == None:
+            break;
+        XPOINT.append(row[0])
+        YPOINT.append(row[1])
+
+    con.close()
+
+##좌투sql
+def analyse_Leftpitcher():
+    sql = ""
+    sql = "SELECT xPoint, yPoint FROM userData WHERE batterName='" + batterName + "' AND pitcherType=1"
+    selectData(sql)
+
+##우투sql
+def analyse_Rightpitcher():
+    sql = ""
+    sql = "SELECT xPoint, yPoint FROM userData WHERE batterName='" + batterName + "' AND pitcherType=2"
+    selectData(sql)
+
+##직구sql
+def analyse_Fastball():
+    sql = ""
+    sql = "SELECT xPoint, yPoint FROM userData WHERE batterName='" + batterName + "' AND pitchType=1"
+    selectData(sql)
+
+##슬라이더(변화구)sql
+def analyse_Slider():
+    sql = ""
+    sql = "SELECT xPoint, yPoint FROM userData WHERE batterName='" + batterName + "' AND pitchType=2"
+    selectData(sql)
+
+##투수이름sql
+def analyse_pitcher():
+    sql = ""
+    sql = "SELECT xPoint, yPoint FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName +"'"
+    selectData(sql)
+
+##수비 추천
+def recoDefence():
+    sql = ""
+    sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
+
+    XPOINT, YPOINT, manType, ballType = [], [], [], []
+    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    while (True):
+        row = cur.fetchone()
+        if row == None:
+            break;
+        XPOINT.append(row[0])
+        YPOINT.append(row[1])
+        manType.append(row[2])
+        ballType.append(row[3])
+
+    xaver = averXpoint(XPOINT)
+    yaver = averYpoint(YPOINT)
+    manaver = avermanType(manType)
+    ballaver = averballType(ballType)
+
+
+
+##x좌표 평균값
+def averXpoint(XPOINT):
+    Xsum = 0
+    Xaver = 0
+    for x in range(0, len(XPOINT)):
+        Xsum += XPOINT[x]
+    Xaver = Xsum/len(XPOINT)
+    return Xaver
+
+##y좌표 평균값
+def averYpoint(YPOINT):
+    Ysum = 0
+    Yaver = 0
+    for y in range(0, len(YPOINT)):
+        Ysum += YPOINT[y]
+    Yaver = Ysum/len(YPOINT)
+    return Yaver
+
+##투수정보 확률
+def avermanType(manType):
+    leftType = manType.count(1)/len(manType)
+    rightType = manType.count(2)/ len(manType)
+
+    if leftType > rightType:
+        return leftType
+    else:
+        return rightType
+
+##구종 확률
+def averballType(ballType):
+    fastball = ballType.count(1)/len(ballType)
+    slider = ballType.count(2)/len(ballType)
+
+    if fastball > slider:
+        return fastball
+    else:
+        return slider
+
+
+def resetVari():
+    pitcherName = None
+    pitcherType = None
+    pitchType = None
+    batterName = None
+    xPoint = None
+    yPoint = None
+    pitcherTypetext = None
+    pitchTypetext = None
+
 #맨 위 입력 버튼으로 데이터베이스에 데이터 저장
 
 
@@ -110,21 +231,48 @@ def input_messageask():
         print("저장됨") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
         PrintData() #데이터가 제대로 저장됐는지 확인하기 위해서 추가한 함수
         print("출력") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
-        pitcherName = None
-        pitcherType = None
-        pitchType = None
-        batterName = None
-        xPoint = None
-        yPoint = None
-        pitcherTypetext = None
-        pitchTypetext = None
+
+        resetVari()
 
 
 
 def analyse_messageask():
-    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
-    if ans== "yes":
-        canvas.delete("all")
+
+    if pitcherType == 1:
+        ans = messagebox.askquestion("확인", "투수 정보 : 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+        if ans == "yes":
+            analyse_Leftpitcher()
+            resetVari()
+
+    elif pitcherType == 2:
+        ans = messagebox.askquestion("확인", "투수 정보 : 우투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+        if ans == "yes":
+            analyse_Rightpitcher()
+            resetVari()
+
+    elif pitchType == 1:
+        ans = messagebox.askquestion("확인", "구종 : 직구" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+        if ans == "yes":
+            analyse_Fastball()
+            resetVari()
+
+    elif pitchType == 2:
+        ans = messagebox.askquestion("확인", "구종 : 슬라이더" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+        if ans == "yes":
+            analyse_Slider()
+            resetVari()
+
+    elif pitcherName != None:
+        ans = messagebox.askquestion("확인", "투수 이름 : " + pitcherName + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+        if ans == "yes":
+            analyse_pitcher()
+            resetVari()
+
+
+def recommend_messageask():
+    ans = messagebox.askquestion("확인", "투수 이름 : " + pitcherName + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+    if ans == "yes":
+        recoDefence()
 
 
 #메뉴 설정
@@ -145,7 +293,7 @@ button1=Button(window, text="입력", relief="groove", bg="skyblue", command=inp
 button1.place(x=570, y=20)
 button2=Button(window, text="분석", relief="groove", bg="red", command=analyse_messageask)
 button2.place(x=610, y=20)
-button3=Button(window, text="수비 추천", relief="groove", bg="gray")
+button3=Button(window, text="수비 추천", relief="groove", bg="gray", command =recommend_messageask)
 button3.place(x=650, y=20)
 
 label1=Label(window, text="  투수 이름  ", relief="groove")
