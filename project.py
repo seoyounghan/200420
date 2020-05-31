@@ -5,7 +5,7 @@ import sqlite3
 window = Tk()
 
 window.title("아마추어를 위한 타구 분석 프로그램")
-window.geometry("740x400")
+window.geometry("740x500")
 window.resizable(False, False)
 
 mainMenu = Menu(window)
@@ -13,7 +13,7 @@ window.config(menu=mainMenu)
 
 #야구장 이미지 사진
 photo = PhotoImage(file="야구장사진.gif")
-label_image = Label(window, image=photo, bg="PINK")
+label_image = Label(window, image=photo)
 
 #변수설정
 pitcherName =None
@@ -28,8 +28,9 @@ pitchTypetext=None
 #데이터베이스 설정
 
 #캔버스 설정
-canvas = Canvas(window, bd=2, width=560, height=400)
-canvas.create_image(280, 200, image = photo)
+canvas = Canvas(window, bd=2, width=550, height=400)
+canvas.create_image(280, 250, image = photo)
+
 canvas.pack(fill="both", side=LEFT)
 
 
