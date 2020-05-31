@@ -104,6 +104,7 @@ def selectData(sql):
         XPOINT.append(row[0])
         YPOINT.append(row[1])
 
+    print(XPOINT, YPOINT) ##출력확인용
     con.close()
 
 ##좌투sql
@@ -201,6 +202,15 @@ def averballType(ballType):
 
 
 def resetVari():
+    global pitcherName
+    global pitcherType
+    global pitchType
+    global batterName
+    global xPoint
+    global yPoint
+    global pitcherTypetext
+    global pitchTypetext
+
     pitcherName = None
     pitcherType = None
     pitchType = None
@@ -340,6 +350,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     sql = "INSERT INTO userData VALUES('" + str(pitcherName) + "', " + str(pitcherType) + "," + str(
         pitchType) + ", '" + str(batterName) + "', " + str(xPoint) + "," + str(yPoint) + ")"
     cur.execute(sql)
+
     con.commit()
     con.close()
 

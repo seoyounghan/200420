@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="51386675-3723-4185-b4a4-95e71e139f65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBSELECT.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBSELECT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python.py" beforeDir="false" afterPath="$PROJECT_DIR$/python.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,28 +37,7 @@
       <recent name="C:\Users\82102\PycharmProjects\200420" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.project">
-    <configuration name="7주차Quiz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="200420" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/7주차Quiz.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.DBSELECT">
     <configuration name="9주차퀴즈" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,6 +51,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/9주차퀴즈.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DBSELECT" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="200420" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DBSELECT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DBSELECT" />
         <item itemvalue="Python.project" />
         <item itemvalue="Python.9주차퀴즈" />
         <item itemvalue="Python.python" />
         <item itemvalue="Python.Quiz08" />
-        <item itemvalue="Python.7주차Quiz" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590233501986</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="0525 pm06:09 양가연">
+      <created>1590397802135</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590397802135</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -274,7 +281,8 @@
     <MESSAGE value="0522 pm10;26" />
     <MESSAGE value="0522 pm10;27" />
     <MESSAGE value="0523 pm08:31" />
-    <option name="LAST_COMMIT_MESSAGE" value="0523 pm08:31" />
+    <MESSAGE value="0525 pm06:09 양가연" />
+    <option name="LAST_COMMIT_MESSAGE" value="0525 pm06:09 양가연" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="105" key="#7주차Quiz" timestamp="1588570230564">
@@ -290,11 +298,11 @@
     </state>
     <state x="396" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587370581460" />
     <state x="475" y="187" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1590153771751" />
-    <state x="352" y="0" key="CommitChangelistDialog2" timestamp="1590233500620">
+    <state x="352" y="0" key="CommitChangelistDialog2" timestamp="1590397800850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1587368851818" />
-    <state x="352" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590233500620" />
+    <state x="352" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590397800850" />
     <state x="391" y="0" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1588570678332" />
     <state x="117" y="92" key="DiffContextDialog" timestamp="1587391690565">
       <screen x="0" y="0" width="1536" height="824" />
@@ -305,25 +313,25 @@
     </state>
     <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590235274520" />
     <state x="609" y="186" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1588570791840" />
-    <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1590397744858">
+    <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1590947747532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590397744858" />
+    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
     <state width="1685" height="59" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
-    <state width="757" height="210" key="GridCell.Tab.0.center" timestamp="1590397744858">
+    <state width="757" height="210" key="GridCell.Tab.0.center" timestamp="1590947747532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590397744858" />
+    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
     <state width="1685" height="59" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
-    <state width="757" height="210" key="GridCell.Tab.0.left" timestamp="1590397744858">
+    <state width="757" height="210" key="GridCell.Tab.0.left" timestamp="1590947747532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590397744858" />
+    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
     <state width="1685" height="59" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
-    <state width="757" height="210" key="GridCell.Tab.0.right" timestamp="1590397744858">
+    <state width="757" height="210" key="GridCell.Tab.0.right" timestamp="1590947747532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590397744858" />
+    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
     <state width="1685" height="59" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
     <state x="147" y="61" key="MergeDialog" timestamp="1587389697013">
       <screen x="0" y="0" width="1536" height="824" />
@@ -341,22 +349,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="50" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587386789734" />
-    <state x="280" y="108" key="Vcs.Push.Dialog.v2" timestamp="1590233506317">
+    <state x="280" y="108" key="Vcs.Push.Dialog.v2" timestamp="1590397813173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587370624189" />
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1587368902541" />
-    <state x="280" y="108" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590233506317" />
+    <state x="280" y="108" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590397813173" />
     <state x="311" y="135" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1588570694183" />
     <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588569592486">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="570" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587389663743" />
     <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1027@0.0.1707.1027" timestamp="1588569592486" />
-    <state x="484" y="199" key="git4idea.merge.GitPullDialog" timestamp="1590332964536">
+    <state x="484" y="199" key="git4idea.merge.GitPullDialog" timestamp="1590946034099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="484" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590332964536" />
+    <state x="484" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590946034099" />
     <state x="684" y="305" key="svn.repositoryBrowser" timestamp="1588570648667">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
