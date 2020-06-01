@@ -11,11 +11,11 @@ window.geometry("740x500")
 window.resizable(False, False)
 
 mainMenu = Menu(window)
-window.config(menu=mainMenu)
+window.config(menu = mainMenu)
 
 #야구장 이미지 사진
-photo = PhotoImage(file="야구장사진.gif")
-label_image = Label(window, image=photo)
+photo = PhotoImage(file = "야구장사진.gif")
+label_image = Label(window, image = photo)
 
 #변수설정
 pitcherName =None
@@ -102,9 +102,9 @@ def clickbutton9(): #타자 이름
 ##select함수
 def selectData(sql):
     XPOINT, YPOINT = [], []
-    con = sqlite3.connect("C:/sqlite")
+    con = sqlite3.connect("C:/sqlite/userData")
     cur = con.cursor()
-    cur.execute(sql)
+    cur.execute("SELECT * FROM userData")
     while (True):
         row = cur.fetchone()
         if row == None:
@@ -112,7 +112,7 @@ def selectData(sql):
         XPOINT.append(row[0])
         YPOINT.append(row[1])
 
-    print(XPOINT, YPOINT) ##출력확인용
+    print_batterLine(XPOINT, YPOINT)
     con.close()
 
 ##좌투sql
@@ -151,7 +151,7 @@ def recoDefence():
     sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
 
     XPOINT, YPOINT, manType, ballType = [], [], [], []
-    con = sqlite3.connect("C:/sqlite")
+    con = sqlite3.connect("C:/sqlite/userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -261,7 +261,6 @@ def analyse_messageask():
         ans = messagebox.askquestion("확인", "투수 정보 : 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
         if ans == "yes":
             analyse_Leftpitcher()
-
             resetVari()
 
     elif pitcherType == 2:
@@ -295,17 +294,18 @@ def recommend_messageask():
         recoDefence()
 
 #분포도 출력
-def print(Xpoint, Ypoint):
+def print_batterLine(xPoint, yPoint):
     r, g, b = getRGB()
     turtle.pencolor((r, g, b))
 
-    t.shape("circle")
-    t.shapesize(1, 1)
+    t = turtle.Turtle()
+    tur.shape("circle")
+    t.shapesize(0.5, 0.5)
 
     t.up()
     t.goto(mainpointX, mainpointY)
     t.down()
-    t.goto(Xpoint, Ypoint)
+    t.goto(xPoint, yPoint)
     t.done()
 
 #분포도 색갈 랜덤 지정
@@ -372,8 +372,8 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:/sqlite")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -388,8 +388,8 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:/sqlite")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -403,9 +403,17 @@ def PrintData():
             break;
         data1=row[0]
         data2=row[1]
+        if data2 == 1 :
+            data2 = "좌투"
+        if  data2 == 2 :
+            data2 = "우투"
         data3=row[2]
+        if  data3 == 1 :
+            data3 = "직구"
+        if  data3 == 2 :
+            data3 = "슬라이더"
         data4=row[3]
-        print("%5s   %d    %d    %15s"%(data1, data2, data3, data4))
+        print("%4s   %7s    %6s    %5s"%(data1, data2, data3, data4))
     con.close()
 
 

@@ -36,7 +36,7 @@
       <recent name="C:\Users\82102\PycharmProjects\200420" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.project">
+  <component name="RunManager" selected="Python.t">
     <configuration name="9주차퀴즈" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,27 +71,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DBSELECT.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Quiz08" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="200420" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Quiz08.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,13 +121,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="t" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="200420" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.t" />
         <item itemvalue="Python.project" />
         <item itemvalue="Python.DBSELECT" />
         <item itemvalue="Python.9주차퀴즈" />
         <item itemvalue="Python.python" />
-        <item itemvalue="Python.Quiz08" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590990236459</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="0525 pm06:09 양가연">
+      <created>1590992357252</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590992357252</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -327,12 +334,16 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="560" y="105" key="#project/0.0.1707.1027@0.0.1707.1027" timestamp="1590992320298" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1590990234832">
+    <state x="560" y="105" key="#t" timestamp="1590994468800">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="560" y="105" key="#t/0.0.1707.1027@0.0.1707.1027" timestamp="1590994468800" />
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1590992355581">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1587368851818" />
     <state x="352" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590397800850" />
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1590990234832" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1590992355581" />
     <state x="117" y="92" key="DiffContextDialog" timestamp="1587391690565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -342,26 +353,26 @@
     </state>
     <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590235274520" />
     <state x="609" y="186" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1588570791840" />
-    <state width="1685" height="175" key="GridCell.Tab.0.bottom" timestamp="1590992320333">
+    <state width="1685" height="175" key="GridCell.Tab.0.bottom" timestamp="1590994524565">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1590992320333" />
-    <state width="1685" height="175" key="GridCell.Tab.0.center" timestamp="1590992320332">
+    <state width="1685" height="175" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
+    <state width="1685" height="175" key="GridCell.Tab.0.center" timestamp="1590994524565">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1590992320332" />
-    <state width="1685" height="175" key="GridCell.Tab.0.left" timestamp="1590992320331">
+    <state width="1685" height="175" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
+    <state width="1685" height="175" key="GridCell.Tab.0.left" timestamp="1590994524565">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1590992320331" />
-    <state width="1685" height="175" key="GridCell.Tab.0.right" timestamp="1590992320332">
+    <state width="1685" height="175" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
+    <state width="1685" height="175" key="GridCell.Tab.0.right" timestamp="1590994524565">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1590992320332" />
+    <state width="1685" height="175" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
     <state x="147" y="61" key="MergeDialog" timestamp="1587389697013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -378,13 +389,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="50" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587386789734" />
-    <state x="311" y="135" key="Vcs.Push.Dialog.v2" timestamp="1590990246495">
+    <state x="311" y="135" key="Vcs.Push.Dialog.v2" timestamp="1590992362354">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587370624189" />
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1587368902541" />
     <state x="280" y="108" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590397813173" />
-    <state x="311" y="135" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1590990246495" />
+    <state x="311" y="135" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1590992362354" />
     <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590990187442">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
