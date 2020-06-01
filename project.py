@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import sqlite3
 import turtle
+import ramdom
 
 window = Tk()
 
@@ -306,6 +307,13 @@ def print(Xpoint, Ypoint):
     t.down()
     t.goto(Xpoint, Ypoint)
     t.done()
+
+def getRGB() :
+    r, g, b = 0,0,0
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    return(r, g, b)
 
 #메뉴 설정
 fileMenu=Menu(mainMenu)
