@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import sqlite3
 import turtle
-import ramdom
+import random
 
 window = Tk()
 
@@ -308,6 +308,7 @@ def print(Xpoint, Ypoint):
     t.goto(Xpoint, Ypoint)
     t.done()
 
+#분포도 색갈 랜덤 지정
 def getRGB() :
     r, g, b = 0,0,0
     r = random.random()
