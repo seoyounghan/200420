@@ -7,7 +7,7 @@ import random
 window = Tk()
 
 window.title("아마추어를 위한 타구 분석 프로그램")
-window.geometry("740x500")
+window.geometry("1040x500")
 window.resizable(False, False)
 
 mainMenu = Menu(window)
@@ -26,6 +26,8 @@ xPoint =None
 yPoint =None
 pitcherTypetext=None
 pitchTypetext=None
+battingRes = None
+battingRestext = None
 
 #분석 화면 사용 변수 선언
 con, cur = None, None
@@ -95,6 +97,78 @@ def clickbutton9(): #타자 이름
     global batterName
     batterName=entry2.get()
     print(entry2.get())
+
+def clickbutton10(): #1루타
+    global battingRes
+    battingRes = 1
+    global battingRestext
+    battingRestext = "1루타"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton11(): #2루타
+    global battingRes
+    battingRes = 2
+    global battingRestext
+    battingRestext = "2루타"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton12(): #3루타
+    global battingRes
+    battingRes = 3
+    global battingRestext
+    battingRestext = "3루타"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton13(): #홈런
+    global battingRes
+    battingRes = 4
+    global battingRestext
+    battingRestext = "홈런"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton14(): #볼넷
+    global battingRes
+    battingRes = 5
+    global battingRestext
+    battingRestext = "볼넷"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton15(): #사구
+    global battingRes
+    battingRes = 6
+    global battingRestext
+    battingRestext = "사구"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton16(): #뜬공
+    global battingRes
+    battingRes = 7
+    global battingRestext
+    battingRestext = "뜬공"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton17(): #희생플라이
+    global battingRes
+    battingRes = 8
+    global battingRestext
+    battingRestext = "희생플라이"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton18(): #삼진
+    global battingRes
+    battingRes = 9
+    global battingRestext
+    battingRestext = "삼진"
+    print(battingRes)
+    print(battingRestext)
 
 
 ##데이터 select(고정값: 타자 이름/ 변수: 투수포지션/구종/투수이름)
@@ -218,6 +292,8 @@ def resetVari():
     global yPoint
     global pitcherTypetext
     global pitchTypetext
+    global battingRes
+    global battingRestext
 
     pitcherName = None
     pitcherType = None
@@ -227,6 +303,8 @@ def resetVari():
     yPoint = None
     pitcherTypetext = None
     pitchTypetext = None
+    battingRes = None
+    battingRestext = None
 
 #맨 위 입력 버튼으로 데이터베이스에 데이터 저장
 
@@ -241,7 +319,7 @@ def input_messageask():
     global pitcherTypetext
     global pitchTypetext
 
-    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n타격 결과 : " + battingRestext + "\n이 맞습니까?")
     if ans == "yes":
         canvas.delete("all")
         canvas.create_image(280, 200, image=photo)
@@ -366,6 +444,41 @@ entry2=Entry(window, width=16) #타자정보
 entry2.place(x=570, y=333)
 button9=Button(window, text="입력", relief="groove", bg="gray", command=clickbutton9)
 button9.place(x=690, y=330)
+
+label5=Label(window, text=" 타격 결과 ", relief="groove")
+label5.place(x=800, y=20)
+button10=Button(window, text="    1루타    ", relief="groove", bg="gray", command=clickbutton10)
+button10.place(x=800, y=45)
+button11=Button(window, text="    2루타    ", relief="groove", bg="gray", command=clickbutton11)
+button11.place(x=890, y=45)
+button12=Button(window, text="    3루타    ", relief="groove", bg="gray", command=clickbutton12)
+button12.place(x=800, y=80)
+button13=Button(window, text="     홈런     ", relief="groove", bg="gray", command=clickbutton13)
+button13.place(x=890, y=80)
+button14=Button(window, text="     볼넷     ", relief="groove", bg="gray", command=clickbutton14)
+button14.place(x=800, y=115)
+button15=Button(window, text="     사구     ", relief="groove", bg="gray", command=clickbutton15)
+button15.place(x=890, y=115)
+button16=Button(window, text="     뜬공     ", relief="groove", bg="gray", command=clickbutton16)
+button16.place(x=800, y=150)
+button17=Button(window, text=" 희생플라이", relief="groove", bg="gray", command=clickbutton17)
+button17.place(x=890, y=150)
+button18=Button(window, text="     삼진     ", relief="groove", bg="gray", command=clickbutton18)
+button18.place(x=800, y=185)
+
+
+label6=Label(window, text="타율")
+label6.place(x=800, y=230)
+label7=Label(window, text="장타율")
+label7.place(x=800, y=260)
+label8=Label(window, text="OPS")
+label8.place(x=800, y=290)
+label9=Label(window, text="BABIP")
+label9.place(x=800, y=320)
+label10=Label(window, text="WAR")
+label10.place(x=800, y=350)
+
+
 
 #데이터베이스 설정
 def SaveLine():  ##데이터베이스에 데이터 저장

@@ -1,19 +1,21 @@
 from tkinter import *
 from tkinter import messagebox
 import sqlite3
+import turtle
+import random
 
 window = Tk()
 
 window.title("아마추어를 위한 타구 분석 프로그램")
-window.geometry("740x500")
+window.geometry("1040x500")
 window.resizable(False, False)
 
 mainMenu = Menu(window)
-window.config(menu=mainMenu)
+window.config(menu = mainMenu)
 
 #야구장 이미지 사진
-photo = PhotoImage(file="야구장사진.gif")
-label_image = Label(window, image=photo)
+photo = PhotoImage(file = "야구장사진.gif")
+label_image = Label(window, image = photo)
 
 #변수설정
 pitcherName =None
@@ -24,6 +26,14 @@ xPoint =None
 yPoint =None
 pitcherTypetext=None
 pitchTypetext=None
+battingRes = None
+battingRestext = None
+
+#분석 화면 사용 변수 선언
+con, cur = None, None
+row = None
+mainpointX = 279 #분포도에서 기준이 되는 시작 좌표의 값
+mainpointY = 445 #y값
 
 #데이터베이스 설정
 
@@ -88,15 +98,87 @@ def clickbutton9(): #타자 이름
     batterName=entry2.get()
     print(entry2.get())
 
+def clickbutton10(): #1루타
+    global battingRes
+    battingRes = 1
+    global battingRestext
+    battingRestext = "1루타"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton11(): #2루타
+    global battingRes
+    battingRes = 2
+    global battingRestext
+    battingRestext = "2루타"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton12(): #3루타
+    global battingRes
+    battingRes = 3
+    global battingRestext
+    battingRestext = "3루타"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton13(): #홈런
+    global battingRes
+    battingRes = 4
+    global battingRestext
+    battingRestext = "홈런"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton14(): #볼넷
+    global battingRes
+    battingRes = 5
+    global battingRestext
+    battingRestext = "볼넷"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton15(): #사구
+    global battingRes
+    battingRes = 6
+    global battingRestext
+    battingRestext = "사구"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton16(): #뜬공
+    global battingRes
+    battingRes = 7
+    global battingRestext
+    battingRestext = "뜬공"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton17(): #희생플라이
+    global battingRes
+    battingRes = 8
+    global battingRestext
+    battingRestext = "희생플라이"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton18(): #삼진
+    global battingRes
+    battingRes = 9
+    global battingRestext
+    battingRestext = "삼진"
+    print(battingRes)
+    print(battingRestext)
+
 
 ##데이터 select(고정값: 타자 이름/ 변수: 투수포지션/구종/투수이름)
 
 ##select함수
 def selectData(sql):
     XPOINT, YPOINT = [], []
-    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/userData")
+    con = sqlite3.connect("C:/sqlite/userData")
     cur = con.cursor()
-    cur.execute(sql)
+    cur.execute("SELECT * FROM userData")
     while (True):
         row = cur.fetchone()
         if row == None:
@@ -104,8 +186,7 @@ def selectData(sql):
         XPOINT.append(row[0])
         YPOINT.append(row[1])
 
-    print(XPOINT, YPOINT)
-
+    print_batterLine(XPOINT, YPOINT)
     con.close()
 
 ##좌투sql
@@ -144,7 +225,7 @@ def recoDefence():
     sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
 
     XPOINT, YPOINT, manType, ballType = [], [], [], []
-    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/userData")
+    con = sqlite3.connect("C:/sqlite/userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -211,6 +292,8 @@ def resetVari():
     global yPoint
     global pitcherTypetext
     global pitchTypetext
+    global battingRes
+    global battingRestext
 
     pitcherName = None
     pitcherType = None
@@ -220,6 +303,8 @@ def resetVari():
     yPoint = None
     pitcherTypetext = None
     pitchTypetext = None
+    battingRes = None
+    battingRestext = None
 
 #맨 위 입력 버튼으로 데이터베이스에 데이터 저장
 
@@ -234,8 +319,8 @@ def input_messageask():
     global pitcherTypetext
     global pitchTypetext
 
-    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
-    if ans== "yes":
+    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n타격 결과 : " + battingRestext + "\n이 맞습니까?")
+    if ans == "yes":
         canvas.delete("all")
         canvas.create_image(280, 200, image=photo)
         print("확인") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
@@ -243,8 +328,8 @@ def input_messageask():
         print("저장됨") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
         PrintData() #데이터가 제대로 저장됐는지 확인하기 위해서 추가한 함수
         print("출력") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
+
         resetVari()
-        print(pitcherType, pitchType, pitcherName, batterName)
 
 
 
@@ -286,6 +371,28 @@ def recommend_messageask():
     if ans == "yes":
         recoDefence()
 
+#분포도 출력
+def print_batterLine(xPoint, yPoint):
+    r, g, b = getRGB()
+    turtle.pencolor((r, g, b))
+
+    t = turtle.Turtle()
+    tur.shape("circle")
+    t.shapesize(0.5, 0.5)
+
+    t.up()
+    t.goto(mainpointX, mainpointY)
+    t.down()
+    t.goto(xPoint, yPoint)
+    t.done()
+
+#분포도 색갈 랜덤 지정
+def getRGB() :
+    r, g, b = 0,0,0
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    return(r, g, b)
 
 #메뉴 설정
 fileMenu=Menu(mainMenu)
@@ -338,12 +445,48 @@ entry2.place(x=570, y=333)
 button9=Button(window, text="입력", relief="groove", bg="gray", command=clickbutton9)
 button9.place(x=690, y=330)
 
+label5=Label(window, text=" 타격 결과 ", relief="groove")
+label5.place(x=800, y=20)
+button10=Button(window, text="    1루타    ", relief="groove", bg="gray", command=clickbutton10)
+button10.place(x=800, y=45)
+button11=Button(window, text="    2루타    ", relief="groove", bg="gray", command=clickbutton11)
+button11.place(x=890, y=45)
+button12=Button(window, text="    3루타    ", relief="groove", bg="gray", command=clickbutton12)
+button12.place(x=800, y=80)
+button13=Button(window, text="     홈런     ", relief="groove", bg="gray", command=clickbutton13)
+button13.place(x=890, y=80)
+button14=Button(window, text="     볼넷     ", relief="groove", bg="gray", command=clickbutton14)
+button14.place(x=800, y=115)
+button15=Button(window, text="     사구     ", relief="groove", bg="gray", command=clickbutton15)
+button15.place(x=890, y=115)
+button16=Button(window, text="     뜬공     ", relief="groove", bg="gray", command=clickbutton16)
+button16.place(x=800, y=150)
+button17=Button(window, text=" 희생플라이", relief="groove", bg="gray", command=clickbutton17)
+button17.place(x=890, y=150)
+button18=Button(window, text="     삼진     ", relief="groove", bg="gray", command=clickbutton18)
+button18.place(x=800, y=185)
+
+
+label6=Label(window, text="타율")
+label6.place(x=800, y=230)
+label7=Label(window, text="장타율")
+label7.place(x=800, y=260)
+label8=Label(window, text="OPS")
+label8.place(x=800, y=290)
+label9=Label(window, text="BABIP")
+label9.place(x=800, y=320)
+label10=Label(window, text="WAR")
+label10.place(x=800, y=350)
+
+
+
 #데이터베이스 설정
 def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -358,8 +501,8 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect("C:/Users/82102/sqlite-tools-win32-x86-3310100/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -373,9 +516,17 @@ def PrintData():
             break;
         data1=row[0]
         data2=row[1]
+        if data2 == 1 :
+            data2 = "좌투"
+        if  data2 == 2 :
+            data2 = "우투"
         data3=row[2]
+        if  data3 == 1 :
+            data3 = "직구"
+        if  data3 == 2 :
+            data3 = "슬라이더"
         data4=row[3]
-        print("%5s   %d    %d    %15s"%(data1, data2, data3, data4))
+        print("%4s   %7s    %6s    %5s"%(data1, data2, data3, data4))
     con.close()
 
 

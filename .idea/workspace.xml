@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="51386675-3723-4185-b4a4-95e71e139f65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBSELECT.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBSELECT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +37,7 @@
       <recent name="C:\Users\82102\PycharmProjects\200420" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.t">
+  <component name="RunManager" selected="Python.DBSELECT">
     <configuration name="9주차퀴즈" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,9 +145,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.t" />
-        <item itemvalue="Python.project" />
         <item itemvalue="Python.DBSELECT" />
+        <item itemvalue="Python.project" />
+        <item itemvalue="Python.t" />
         <item itemvalue="Python.9주차퀴즈" />
         <item itemvalue="Python.python" />
       </list>
@@ -353,25 +354,25 @@
     </state>
     <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590235274520" />
     <state x="609" y="186" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1588570791840" />
-    <state width="1685" height="175" key="GridCell.Tab.0.bottom" timestamp="1590994524565">
-      <screen x="0" y="0" width="1707" height="1027" />
+    <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1591455751789">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
+    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591455751789" />
     <state width="1685" height="175" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
-    <state width="1685" height="175" key="GridCell.Tab.0.center" timestamp="1590994524565">
-      <screen x="0" y="0" width="1707" height="1027" />
+    <state width="757" height="210" key="GridCell.Tab.0.center" timestamp="1591455751789">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
+    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591455751789" />
     <state width="1685" height="175" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
-    <state width="1685" height="175" key="GridCell.Tab.0.left" timestamp="1590994524565">
-      <screen x="0" y="0" width="1707" height="1027" />
+    <state width="757" height="210" key="GridCell.Tab.0.left" timestamp="1591455751789">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
+    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591455751789" />
     <state width="1685" height="175" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
-    <state width="1685" height="175" key="GridCell.Tab.0.right" timestamp="1590994524565">
-      <screen x="0" y="0" width="1707" height="1027" />
+    <state width="757" height="210" key="GridCell.Tab.0.right" timestamp="1591455751789">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
+    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591455751789" />
     <state width="1685" height="175" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1590994524565" />
     <state x="147" y="61" key="MergeDialog" timestamp="1587389697013">
       <screen x="0" y="0" width="1536" height="824" />
@@ -401,10 +402,10 @@
     </state>
     <state x="570" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587389663743" />
     <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1027@0.0.1707.1027" timestamp="1590990187442" />
-    <state x="484" y="199" key="git4idea.merge.GitPullDialog" timestamp="1590946034099">
+    <state x="484" y="199" key="git4idea.merge.GitPullDialog" timestamp="1591452372308">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="484" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590946034099" />
+    <state x="484" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1591452372308" />
     <state x="684" y="305" key="svn.repositoryBrowser" timestamp="1588570648667">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
