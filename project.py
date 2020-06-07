@@ -30,8 +30,6 @@ battingRes = None
 battingRestext = None
 
 #분석 화면 사용 변수 선언
-con, cur = None, None
-row = None
 mainpointX = 279 #분포도에서 기준이 되는 시작 좌표의 값
 mainpointY = 446 #y값
 
@@ -175,7 +173,7 @@ def clickbutton18(): #삼진
 
 ##select함수
 def selectData(sql):
-    XPOINT, YPOINT = [], []
+    #XPOINT, YPOINT = [], []
     con = sqlite3.connect("C:/sqlite/userData")
     cur = con.cursor()
     cur.execute("SELECT * FROM userData")
@@ -183,10 +181,11 @@ def selectData(sql):
         row = cur.fetchone()
         if row == None:
             break;
-        XPOINT.append(row[0])
-        YPOINT.append(row[1])
+        XPOINT=row[0]
+        YPOINT=row[1]
+        #print_batterLine(XPOINT, YPOINT)
+        canvas.create_line(mainpointX, mainpointY, XPOINT, YPOINT)
 
-    print_batterLine(XPOINT, YPOINT)
     con.close()
 
 ##좌투sql
@@ -481,7 +480,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     cur = con.cursor()
 
     sql = "INSERT INTO userData VALUES('" + str(pitcherName) + "', " + str(pitcherType) + "," + str(
-        pitchType) + ", '" + str(batterName) + "', " + str(xPoint) + "," + str(yPoint) + ")"
+        pitchType) + ", '" + str(batterName) + "', " + str(battingRes) + "," + str(xPoint) + "," + str(yPoint) + ")"
     cur.execute(sql)
 
     con.commit()

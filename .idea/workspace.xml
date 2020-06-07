@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="51386675-3723-4185-b4a4-95e71e139f65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591497877912</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="0607 데이터베이스 수정">
+      <created>1591499348169</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591499348169</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -316,7 +324,8 @@
     <MESSAGE value="0523 pm08:31" />
     <MESSAGE value="0525 pm06:09 양가연" />
     <MESSAGE value="0607 분포도 출력 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="0607 분포도 출력 변경" />
+    <MESSAGE value="0607 데이터베이스 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="0607 데이터베이스 수정" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="105" key="#7주차Quiz" timestamp="1588570230564">
@@ -349,12 +358,12 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="560" y="105" key="#t/0.0.1707.1027@0.0.1707.1027" timestamp="1590994468800" />
-    <state x="391" y="0" width="760" height="996" key="CommitChangelistDialog2" timestamp="1591497875880">
+    <state x="391" y="0" width="760" height="996" key="CommitChangelistDialog2" timestamp="1591499346546">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1587368851818" />
     <state x="352" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590397800850" />
-    <state x="391" y="0" width="760" height="996" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1591497875880" />
+    <state x="391" y="0" width="760" height="996" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1591499346546" />
     <state x="117" y="92" key="DiffContextDialog" timestamp="1587391690565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -364,26 +373,26 @@
     </state>
     <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590235274520" />
     <state x="609" y="186" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1588570791840" />
-    <state width="1685" height="175" key="GridCell.Tab.0.bottom" timestamp="1591498792183">
+    <state width="1685" height="175" key="GridCell.Tab.0.bottom" timestamp="1591504441032">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1591498792183" />
-    <state width="1685" height="175" key="GridCell.Tab.0.center" timestamp="1591498792183">
+    <state width="1685" height="175" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1685" height="175" key="GridCell.Tab.0.center" timestamp="1591504441032">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1591498792183" />
-    <state width="1685" height="175" key="GridCell.Tab.0.left" timestamp="1591498792183">
+    <state width="1685" height="175" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1685" height="175" key="GridCell.Tab.0.left" timestamp="1591504441032">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1591498792183" />
-    <state width="1685" height="175" key="GridCell.Tab.0.right" timestamp="1591498792183">
+    <state width="1685" height="175" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1685" height="175" key="GridCell.Tab.0.right" timestamp="1591504441032">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590947747532" />
-    <state width="1685" height="175" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1591498792183" />
+    <state width="1685" height="175" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
     <state width="1685" height="94" key="GridCell.Tab.1.bottom" timestamp="1591485417299">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -440,16 +449,5 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="363" y="272" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587370535484" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project.py</url>
-          <line>473</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
