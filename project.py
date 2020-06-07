@@ -56,6 +56,7 @@ def clickbutton4(): #투수 이름
     global pitcherName
     pitcherName=entry1.get()
     print(entry1.get())
+    delete_display()
 
 def clickbutton5(): #좌투
     global pitcherType
@@ -64,6 +65,8 @@ def clickbutton5(): #좌투
     pitcherTypetext="좌투"
     print(pitcherType)
     print(pitcherTypetext)
+    delete_display()
+
 
 
 def clickbutton6(): #우투
@@ -73,6 +76,8 @@ def clickbutton6(): #우투
     pitcherTypetext="우투"
     print(pitcherType)
     print(pitcherTypetext)
+    delete_display()
+
 
 
 def clickbutton7(): #직구
@@ -82,6 +87,8 @@ def clickbutton7(): #직구
     pitchTypetext="직구"
     print(pitchType)
     print(pitchTypetext)
+    delete_display()
+
 
 def clickbutton8(): #슬라이더
     global pitchType
@@ -90,11 +97,15 @@ def clickbutton8(): #슬라이더
     pitchTypetext="슬라이더"
     print(pitchType)
     print(pitchTypetext)
+    delete_display()
+
 
 def clickbutton9(): #타자 이름
     global batterName
     batterName=entry2.get()
     print(entry2.get())
+    delete_display()
+
 
 def clickbutton10(): #1루타
     global battingRes
@@ -103,6 +114,8 @@ def clickbutton10(): #1루타
     battingRestext = "1루타"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton11(): #2루타
     global battingRes
@@ -111,6 +124,8 @@ def clickbutton11(): #2루타
     battingRestext = "2루타"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton12(): #3루타
     global battingRes
@@ -119,6 +134,8 @@ def clickbutton12(): #3루타
     battingRestext = "3루타"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton13(): #홈런
     global battingRes
@@ -127,6 +144,8 @@ def clickbutton13(): #홈런
     battingRestext = "홈런"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton14(): #볼넷
     global battingRes
@@ -135,6 +154,8 @@ def clickbutton14(): #볼넷
     battingRestext = "볼넷"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton15(): #사구
     global battingRes
@@ -143,6 +164,8 @@ def clickbutton15(): #사구
     battingRestext = "사구"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton16(): #뜬공
     global battingRes
@@ -151,6 +174,8 @@ def clickbutton16(): #뜬공
     battingRestext = "뜬공"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton17(): #희생플라이
     global battingRes
@@ -159,6 +184,8 @@ def clickbutton17(): #희생플라이
     battingRestext = "희생플라이"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 def clickbutton18(): #삼진
     global battingRes
@@ -167,6 +194,8 @@ def clickbutton18(): #삼진
     battingRestext = "삼진"
     print(battingRes)
     print(battingRestext)
+    delete_display()
+
 
 
 ##데이터 select(고정값: 타자 이름/ 변수: 투수포지션/구종/투수이름)
@@ -174,7 +203,7 @@ def clickbutton18(): #삼진
 ##select함수
 def selectData(sql):
     #XPOINT, YPOINT = [], []
-    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -224,7 +253,7 @@ def recoDefence():
     sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
 
     XPOINT, YPOINT, manType, ballType = [], [], [], []
-    con = sqlite3.connect("C:/sqlite/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -306,6 +335,11 @@ def resetVari():
     battingRestext = None
 
 #맨 위 입력 버튼으로 데이터베이스에 데이터 저장
+def delete_display():
+    canvas.delete("all")
+    canvas.create_image(280, 250, image=photo)
+
+
 
 
 def input_messageask():
@@ -320,8 +354,7 @@ def input_messageask():
 
     ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n타격 결과 : " + battingRestext + "\n이 맞습니까?")
     if ans == "yes":
-        canvas.delete("all")
-        canvas.create_image(280, 200, image=photo)
+        delete_display()
         print("확인") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
         SaveLine()
         print("저장됨") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
@@ -331,36 +364,44 @@ def input_messageask():
         resetVari()
 
 
-
 def analyse_messageask():
 
     if pitcherType == 1:
         ans = messagebox.askquestion("확인", "투수 정보 : 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
         if ans == "yes":
+            delete_display()
             analyse_Leftpitcher()
             resetVari()
+
 
     elif pitcherType == 2:
         ans = messagebox.askquestion("확인", "투수 정보 : 우투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
         if ans == "yes":
+            delete_display()
             analyse_Rightpitcher()
             resetVari()
+
 
     elif pitchType == 1:
         ans = messagebox.askquestion("확인", "구종 : 직구" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
         if ans == "yes":
+            delete_display()
             analyse_Fastball()
             resetVari()
+
 
     elif pitchType == 2:
         ans = messagebox.askquestion("확인", "구종 : 슬라이더" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
         if ans == "yes":
+            delete_display()
             analyse_Slider()
             resetVari()
+
 
     elif pitcherName != None:
         ans = messagebox.askquestion("확인", "투수 이름 : " + pitcherName + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
         if ans == "yes":
+            delete_display()
             analyse_pitcher()
             resetVari()
 
@@ -368,6 +409,7 @@ def analyse_messageask():
 def recommend_messageask():
     ans = messagebox.askquestion("확인", "투수 이름 : " + pitcherName + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
     if ans == "yes":
+        delete_display()
         recoDefence()
 
 #분포도 출력
@@ -474,7 +516,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -489,7 +531,7 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
