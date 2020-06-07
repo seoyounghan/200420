@@ -33,7 +33,7 @@ battingRestext = None
 con, cur = None, None
 row = None
 mainpointX = 279 #분포도에서 기준이 되는 시작 좌표의 값
-mainpointY = 445 #y값
+mainpointY = 446 #y값
 
 #데이터베이스 설정
 
@@ -374,17 +374,7 @@ def recommend_messageask():
 #분포도 출력
 def print_batterLine(xPoint, yPoint):
     r, g, b = getRGB()
-    turtle.pencolor((r, g, b))
-
-    t = turtle.Turtle()
-    tur.shape("circle")
-    t.shapesize(0.5, 0.5)
-
-    t.up()
-    t.goto(mainpointX, mainpointY)
-    t.down()
-    t.goto(xPoint, yPoint)
-    t.done()
+    canvas.create_line(mainpointX, mainpointY, xPoint, yPoint)
 
 #분포도 색갈 랜덤 지정
 def getRGB() :
