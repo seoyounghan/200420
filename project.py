@@ -56,7 +56,6 @@ def clickbutton4(): #투수 이름
     global pitcherName
     pitcherName=entry1.get()
     print(entry1.get())
-    delete_display()
 
 def clickbutton5(): #좌투
     global pitcherType
@@ -65,7 +64,6 @@ def clickbutton5(): #좌투
     pitcherTypetext="좌투"
     print(pitcherType)
     print(pitcherTypetext)
-    delete_display()
 
 
 
@@ -76,8 +74,6 @@ def clickbutton6(): #우투
     pitcherTypetext="우투"
     print(pitcherType)
     print(pitcherTypetext)
-    delete_display()
-
 
 
 def clickbutton7(): #직구
@@ -87,7 +83,6 @@ def clickbutton7(): #직구
     pitchTypetext="직구"
     print(pitchType)
     print(pitchTypetext)
-    delete_display()
 
 
 def clickbutton8(): #슬라이더
@@ -97,14 +92,12 @@ def clickbutton8(): #슬라이더
     pitchTypetext="슬라이더"
     print(pitchType)
     print(pitchTypetext)
-    delete_display()
 
 
 def clickbutton9(): #타자 이름
     global batterName
     batterName=entry2.get()
     print(entry2.get())
-    delete_display()
 
 
 def clickbutton10(): #1루타
@@ -114,7 +107,6 @@ def clickbutton10(): #1루타
     battingRestext = "1루타"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton11(): #2루타
@@ -124,7 +116,6 @@ def clickbutton11(): #2루타
     battingRestext = "2루타"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton12(): #3루타
@@ -134,7 +125,6 @@ def clickbutton12(): #3루타
     battingRestext = "3루타"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton13(): #홈런
@@ -144,7 +134,6 @@ def clickbutton13(): #홈런
     battingRestext = "홈런"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton14(): #볼넷
@@ -154,7 +143,6 @@ def clickbutton14(): #볼넷
     battingRestext = "볼넷"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton15(): #사구
@@ -164,7 +152,6 @@ def clickbutton15(): #사구
     battingRestext = "사구"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton16(): #뜬공
@@ -174,7 +161,6 @@ def clickbutton16(): #뜬공
     battingRestext = "뜬공"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton17(): #희생플라이
@@ -184,7 +170,6 @@ def clickbutton17(): #희생플라이
     battingRestext = "희생플라이"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 def clickbutton18(): #삼진
@@ -194,7 +179,6 @@ def clickbutton18(): #삼진
     battingRestext = "삼진"
     print(battingRes)
     print(battingRestext)
-    delete_display()
 
 
 
