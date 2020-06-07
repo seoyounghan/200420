@@ -174,9 +174,9 @@ def clickbutton18(): #삼진
 ##select함수
 def selectData(sql):
     #XPOINT, YPOINT = [], []
-    con = sqlite3.connect("C:/sqlite/userData")
+    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")
     cur = con.cursor()
-    cur.execute("SELECT * FROM userData")
+    cur.execute(sql)
     while (True):
         row = cur.fetchone()
         if row == None:
@@ -474,8 +474,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -490,15 +489,14 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
     cur.execute("SELECT * FROM userData")
-    print("타자 이름     투수 정보     구종      투수 이름")
-    print("-----------------------------------------------")
-    data1, data2, data3, data4="","","",""
+    print("타자 이름     투수 정보     구종      투수 이름     투구 결과")
+    print("----------------------------------------------------------")
+    data1, data2, data3, data4, data5="","","","",""
     while(True):
         row=cur.fetchone()
         if row==None:
@@ -515,7 +513,28 @@ def PrintData():
         if  data3 == 2 :
             data3 = "슬라이더"
         data4=row[3]
-        print("%4s   %7s    %6s    %5s"%(data1, data2, data3, data4))
+        data5=row[4]
+        if  data5 == 1 :
+            data5 = "1루타"
+        if  data5 == 2 :
+            data5 = "2루타"
+        if  data5 == 3 :
+            data5 = "3루타"
+        if  data5 == 4 :
+            data5 = "홈런"
+        if  data5 == 5 :
+            data5 = "볼넷"
+        if  data5 == 6 :
+            data5 = "사구"
+        if  data5 == 7 :
+            data5 = "뜬공"
+        if  data5 == 8 :
+            data5 = "희생플라이"
+        if  data5 == 9 :
+            data5 = "삼진"
+
+
+        print("%4s   %7s    %6s    %5s   %6s"%(data1, data2, data3, data4, data5))
     con.close()
 
 

@@ -30,10 +30,8 @@ battingRes = None
 battingRestext = None
 
 #분석 화면 사용 변수 선언
-con, cur = None, None
-row = None
 mainpointX = 279 #분포도에서 기준이 되는 시작 좌표의 값
-mainpointY = 445 #y값
+mainpointY = 446 #y값
 
 #데이터베이스 설정
 
@@ -175,18 +173,19 @@ def clickbutton18(): #삼진
 
 ##select함수
 def selectData(sql):
-    XPOINT, YPOINT = [], []
-    con = sqlite3.connect("C:/sqlite/userData")
+    #XPOINT, YPOINT = [], []
+    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")
     cur = con.cursor()
-    cur.execute("SELECT * FROM userData")
+    cur.execute(sql)
     while (True):
         row = cur.fetchone()
         if row == None:
             break;
-        XPOINT.append(row[0])
-        YPOINT.append(row[1])
+        XPOINT=row[0]
+        YPOINT=row[1]
+        #print_batterLine(XPOINT, YPOINT)
+        canvas.create_line(mainpointX, mainpointY, XPOINT, YPOINT)
 
-    print_batterLine(XPOINT, YPOINT)
     con.close()
 
 ##좌투sql
@@ -374,17 +373,7 @@ def recommend_messageask():
 #분포도 출력
 def print_batterLine(xPoint, yPoint):
     r, g, b = getRGB()
-    turtle.pencolor((r, g, b))
-
-    t = turtle.Turtle()
-    tur.shape("circle")
-    t.shapesize(0.5, 0.5)
-
-    t.up()
-    t.goto(mainpointX, mainpointY)
-    t.down()
-    t.goto(xPoint, yPoint)
-    t.done()
+    canvas.create_line(mainpointX, mainpointY, xPoint, yPoint)
 
 #분포도 색갈 랜덤 지정
 def getRGB() :
@@ -485,13 +474,12 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
     sql = "INSERT INTO userData VALUES('" + str(pitcherName) + "', " + str(pitcherType) + "," + str(
-        pitchType) + ", '" + str(batterName) + "', " + str(xPoint) + "," + str(yPoint) + ")"
+        pitchType) + ", '" + str(batterName) + "', " + str(battingRes) + "," + str(xPoint) + "," + str(yPoint) + ")"
     cur.execute(sql)
 
     con.commit()
@@ -501,15 +489,14 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect("C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:/sqlite/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect("C:/Users/82102/PycharmProjects/200420/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
     cur.execute("SELECT * FROM userData")
-    print("타자 이름     투수 정보     구종      투수 이름")
-    print("-----------------------------------------------")
-    data1, data2, data3, data4="","","",""
+    print("타자 이름     투수 정보     구종      투수 이름     투구 결과")
+    print("----------------------------------------------------------")
+    data1, data2, data3, data4, data5="","","","",""
     while(True):
         row=cur.fetchone()
         if row==None:
@@ -526,7 +513,28 @@ def PrintData():
         if  data3 == 2 :
             data3 = "슬라이더"
         data4=row[3]
-        print("%4s   %7s    %6s    %5s"%(data1, data2, data3, data4))
+        data5=row[4]
+        if  data5 == 1 :
+            data5 = "1루타"
+        if  data5 == 2 :
+            data5 = "2루타"
+        if  data5 == 3 :
+            data5 = "3루타"
+        if  data5 == 4 :
+            data5 = "홈런"
+        if  data5 == 5 :
+            data5 = "볼넷"
+        if  data5 == 6 :
+            data5 = "사구"
+        if  data5 == 7 :
+            data5 = "뜬공"
+        if  data5 == 8 :
+            data5 = "희생플라이"
+        if  data5 == 9 :
+            data5 = "삼진"
+
+
+        print("%4s   %7s    %6s    %5s   %6s"%(data1, data2, data3, data4, data5))
     con.close()
 
 
