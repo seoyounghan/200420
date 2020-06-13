@@ -187,7 +187,7 @@ def clickbutton18(): #삼진
 ##select함수
 def selectData(sql):
     #XPOINT, YPOINT = [], []
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    con = sqlite3.connect(r"C:\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -196,8 +196,23 @@ def selectData(sql):
             break;
         XPOINT=row[0]
         YPOINT=row[1]
-        #print_batterLine(XPOINT, YPOINT)
-        canvas.create_line(mainpointX, mainpointY, XPOINT, YPOINT)
+
+        #원 표시하는 것
+        #x1, y1 = (XPOINT - 1), (YPOINT - 1)
+        #x2, y2 = (XPOINT + 1), (YPOINT + 1)
+        #canvas.create_oval(x1, y1, x2, y2, width = 5)
+
+        #선으로 표시하는 것
+        #canvas.create_line(mainpointX, mainpointY, XPOINT, YPOINT, fill="#009770")
+
+        #엑스 표시
+        x1, y1 = (XPOINT - 3), (YPOINT - 3)
+        x2, y2 = (XPOINT + 3), (YPOINT + 3)
+        x3, y3 = (XPOINT + 3), (YPOINT - 3)
+        x4, y4 = (XPOINT - 3), (YPOINT + 3)
+        #색상은 색상 16진수 표현으로 하면됨
+        canvas.create_line(x1, y1, x2, y2, width = 2, fill = "red")
+        canvas.create_line(x3, y3, x4, y4, width = 2, fill = "red")
 
     con.close()
 
@@ -237,7 +252,7 @@ def recoDefence():
     sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
 
     XPOINT, YPOINT, manType, ballType = [], [], [], []
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    con = sqlite3.connect(r"C:\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -500,7 +515,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -515,7 +530,7 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
