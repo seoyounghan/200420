@@ -189,7 +189,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     sql = ""
 
     con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -204,7 +204,7 @@ def PrintData():
     sql = ""
 
     con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
