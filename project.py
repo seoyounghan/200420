@@ -11,7 +11,7 @@ window.geometry("1040x500")
 window.resizable(False, False)
 
 mainMenu = Menu(window)
-window.config(menu = mainMenu)
+window.config(menu = mainMenu, background="linen")
 
 #야구장 이미지 사진
 photo = PhotoImage(file = "야구장사진.gif")
@@ -187,7 +187,7 @@ def clickbutton18(): #삼진
 ##select함수
 def selectData(sql):
     #XPOINT, YPOINT = [], []
-    con = sqlite3.connect(r"C:\sqlite\userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -252,7 +252,7 @@ def recoDefence():
     sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
 
     XPOINT, YPOINT, manType, ballType = [], [], [], []
-    con = sqlite3.connect(r"C:\sqlite\userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -438,74 +438,74 @@ helpMenu.add_command(label="도움말")
 
 
 #입력 정보
-button1=Button(window, text="입력", relief="groove", bg="skyblue", command=input_messageask)
+button1=Button(window, text="입력", relief="groove", bg="powderblue", command=input_messageask)
 button1.place(x=570, y=20)
-button2=Button(window, text="분석", relief="groove", bg="red", command=analyse_messageask)
+button2=Button(window, text="분석", relief="groove", bg="Salmon", command=analyse_messageask)
 button2.place(x=610, y=20)
-button3=Button(window, text="수비 추천", relief="groove", bg="gray", command =recommend_messageask)
+button3=Button(window, text="수비 추천", relief="groove", bg="PeachPuff", command =recommend_messageask)
 button3.place(x=650, y=20)
 
-label1=Label(window, text="  투수 이름  ", relief="groove")
+label1=Label(window, text="  투수 이름  ", background="linen")
 label1.place(x=570, y=80)
 entry1=Entry(window, width=16) #투수정보
 entry1.place(x=570, y=103)
-button4=Button(window, text="입력", relief="groove", bg="gray", command=clickbutton4)
+button4=Button(window, text="입력", relief="groove", bg="PeachPuff", command=clickbutton4)
 button4.place(x=690, y=100)
 
-label2=Label(window, text=" 투수 정보 선택 ", relief="groove")
+label2=Label(window, text=" 투수 정보 선택 ", background="linen")
 label2.place(x=570, y=150)
-button5=Button(window, text="   좌투   ", relief="groove", bg="gray", command=clickbutton5)
+button5=Button(window, text="   좌투   ", relief="groove", bg="lemonchiffon", command=clickbutton5)
 button5.place(x=570, y=175)
-button6=Button(window, text="   우투   ", relief="groove", bg="gray", command=clickbutton6)
+button6=Button(window, text="   우투   ", relief="groove", bg="lemonchiffon", command=clickbutton6)
 button6.place(x=640, y=175)
 
 
-label3=Label(window, text="  구종 선택  ", relief="groove")
+label3=Label(window, text="  구종 선택  ", background="linen")
 label3.place(x=570, y=230)
-button7=Button(window, text="   직구   ", relief="groove", bg="gray", command=clickbutton7)
+button7=Button(window, text="   직구   ", relief="groove", bg="lightpink", command=clickbutton7)
 button7.place(x=570, y=255)
-button8=Button(window, text="슬라이더", relief="groove", bg="gray", command=clickbutton8)
+button8=Button(window, text="슬라이더", relief="groove", bg="lightpink", command=clickbutton8)
 button8.place(x=640, y=255)
 
 
-label4=Label(window, text="  타자 이름  ", relief="groove")
+label4=Label(window, text="  타자 이름  ", background="linen")
 label4.place(x=570, y=310)
 entry2=Entry(window, width=16) #타자정보
 entry2.place(x=570, y=333)
-button9=Button(window, text="입력", relief="groove", bg="gray", command=clickbutton9)
+button9=Button(window, text="입력", relief="groove", bg="PeachPuff", command=clickbutton9)
 button9.place(x=690, y=330)
 
-label5=Label(window, text=" 타격 결과 ", relief="groove")
+label5=Label(window, text=" 타격 결과 ", background="linen")
 label5.place(x=800, y=20)
-button10=Button(window, text="    1루타    ", relief="groove", bg="gray", command=clickbutton10)
+button10=Button(window, text="    1루타    ", relief="groove", bg="lavender", command=clickbutton10)
 button10.place(x=800, y=45)
-button11=Button(window, text="    2루타    ", relief="groove", bg="gray", command=clickbutton11)
+button11=Button(window, text="    2루타    ", relief="groove", bg="lavender", command=clickbutton11)
 button11.place(x=890, y=45)
-button12=Button(window, text="    3루타    ", relief="groove", bg="gray", command=clickbutton12)
+button12=Button(window, text="    3루타    ", relief="groove", bg="lavender", command=clickbutton12)
 button12.place(x=800, y=80)
-button13=Button(window, text="     홈런     ", relief="groove", bg="gray", command=clickbutton13)
+button13=Button(window, text="     홈런     ", relief="groove", bg="lavender", command=clickbutton13)
 button13.place(x=890, y=80)
-button14=Button(window, text="     볼넷     ", relief="groove", bg="gray", command=clickbutton14)
+button14=Button(window, text="     볼넷     ", relief="groove", bg="lavender", command=clickbutton14)
 button14.place(x=800, y=115)
-button15=Button(window, text="     사구     ", relief="groove", bg="gray", command=clickbutton15)
+button15=Button(window, text="     사구     ", relief="groove", bg="lavender", command=clickbutton15)
 button15.place(x=890, y=115)
-button16=Button(window, text="     뜬공     ", relief="groove", bg="gray", command=clickbutton16)
+button16=Button(window, text="     뜬공     ", relief="groove", bg="lavender", command=clickbutton16)
 button16.place(x=800, y=150)
-button17=Button(window, text=" 희생플라이", relief="groove", bg="gray", command=clickbutton17)
+button17=Button(window, text=" 희생플라이", relief="groove", bg="lavender", command=clickbutton17)
 button17.place(x=890, y=150)
-button18=Button(window, text="     삼진     ", relief="groove", bg="gray", command=clickbutton18)
+button18=Button(window, text="     삼진     ", relief="groove", bg="lavender", command=clickbutton18)
 button18.place(x=800, y=185)
 
 
-label6=Label(window, text="타율")
+label6=Label(window, text="타율", background="linen")
 label6.place(x=800, y=230)
-label7=Label(window, text="장타율")
+label7=Label(window, text="장타율", background="linen")
 label7.place(x=800, y=260)
-label8=Label(window, text="OPS")
+label8=Label(window, text="OPS", background="linen")
 label8.place(x=800, y=290)
-label9=Label(window, text="BABIP")
+label9=Label(window, text="BABIP", background="linen")
 label9.place(x=800, y=320)
-label10=Label(window, text="WAR")
+label10=Label(window, text="WAR", background="linen")
 label10.place(x=800, y=350)
 
 
@@ -515,7 +515,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -530,7 +530,7 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
