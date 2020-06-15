@@ -255,6 +255,7 @@ def recoDefence():
     con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
+    count = 0
     while (True):
         row = cur.fetchone()
         if row == None:
@@ -263,11 +264,55 @@ def recoDefence():
         YPOINT.append(row[1])
         manType.append(row[2])
         ballType.append(row[3])
+        count = count + 1
 
-    xaver = averXpoint(XPOINT)
-    yaver = averYpoint(YPOINT)
+
+    Xpoint1, Xpoint2, Xpoint3, Xpoint4, Ypoint1, Ypoint2, Ypoint3, Ypoint4 = [], [], [], [], [], [], [], []
+    array1, array2, array3, array4 = 0, 0, 0, 0
+
+    for i in XPOINT:
+        if(XPOINT[i]<215 and YPOINT[i]<200):
+            Xpoint1[array1] = XPOINT[i]
+            Ypoint1[array1] = YPOINT[i]
+            array1 = array1 + 1
+        elif (XPOINT[i] < 345 and YPOINT[i] < 200):
+            Xpoint2[array2] = XPOINT[i]
+            Ypoint2[array2] = YPOINT[i]
+            array2 = array2 + 1
+
+        elif (XPOINT[i] < 555 and YPOINT[i] < 200):
+            Xpoint3[array3] = XPOINT[i]
+            Ypoint3[array3] = YPOINT[i]
+            array3 = array3 + 1
+
+        elif (XPOINT[i] < 280 and YPOINT[i] < 340):
+            Xpoint4[array4] = XPOINT[i]
+            Ypoint4[array4] = YPOINT[i]
+            array4 = array4 + 1
+
+
+    xaver1 = averXpoint(Xpoint1)
+    yaver1 = averYpoint(Ypoint1)
+    xaver2 = averXpoint(Xpoint2)
+    yaver2 = averYpoint(Ypoint2)
+    xaver3 = averXpoint(Xpoint3)
+    yaver3 = averYpoint(Ypoint3)
+    xaver4 = averXpoint(Xpoint4)
+    yaver4 = averYpoint(Ypoint4)
+    print_recoDefence(xaver1, yaver1)
+    print_recoDefence(xaver2, yaver2)
+    print_recoDefence(xaver3, yaver3)
+    print_recoDefence(xaver4, yaver4)
+
     manaver = avermanType(manType)
     ballaver = averballType(ballType)
+
+
+def print_recoDefence(Xpoint, Ypoint):
+    x1, y1 = (Xpoint - 3), (Ypoint - 3)
+    x2, y2 = (Xpoint + 3), (Ypoint + 3)
+
+    canvas.create_rectangle(x1, y1, x2, y2, width=2, fill="blue")
 
 
 
