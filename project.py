@@ -249,9 +249,10 @@ def analyse_pitcher():
 ##수비 추천
 def recoDefence():
     sql = ""
-    sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "'"
+    sql = "SELECT xPoint, yPoint, pitcherType, pitchType FROM userData WHERE batterName='" + batterName + "' AND pitcherName='" + pitcherName + "' AND battingRes <>" + str(4)
 
-    XPOINT, YPOINT, manType, ballType = [], [], [], []
+    manType, ballType = [], []
+    point = []
     con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
@@ -260,45 +261,45 @@ def recoDefence():
         row = cur.fetchone()
         if row == None:
             break;
-        XPOINT.append(row[0])
-        YPOINT.append(row[1])
+        X = row[0]
+        Y = row[1]
         manType.append(row[2])
         ballType.append(row[3])
         count = count + 1
-
+        point.append([X, Y])
 
     Xpoint1, Xpoint2, Xpoint3, Xpoint4, Ypoint1, Ypoint2, Ypoint3, Ypoint4 = [], [], [], [], [], [], [], []
     array1, array2, array3, array4 = 0, 0, 0, 0
 
-    for i in XPOINT:
-        if(XPOINT[i]<215 and YPOINT[i]<200):
-            Xpoint1[array1] = XPOINT[i]
-            Ypoint1[array1] = YPOINT[i]
+    for i, k in point:
+        if(i < 215 and k < 200):
+            Xpoint1.append(i)
+            Ypoint1.append(k)
             array1 = array1 + 1
-        elif (XPOINT[i] < 345 and YPOINT[i] < 200):
-            Xpoint2[array2] = XPOINT[i]
-            Ypoint2[array2] = YPOINT[i]
+        elif (i < 345 and k < 200):
+            Xpoint2.append(i)
+            Ypoint2.append(k)
             array2 = array2 + 1
 
-        elif (XPOINT[i] < 555 and YPOINT[i] < 200):
-            Xpoint3[array3] = XPOINT[i]
-            Ypoint3[array3] = YPOINT[i]
+        elif (i < 555 and k < 200):
+            Xpoint3.append(i)
+            Ypoint3.append(k)
             array3 = array3 + 1
 
-        elif (XPOINT[i] < 280 and YPOINT[i] < 340):
-            Xpoint4[array4] = XPOINT[i]
-            Ypoint4[array4] = YPOINT[i]
+        elif (i < 280 and k < 340):
+            Xpoint4.append(i)
+            Ypoint4.append(k)
             array4 = array4 + 1
 
 
-    xaver1 = averXpoint(Xpoint1)
-    yaver1 = averYpoint(Ypoint1)
-    xaver2 = averXpoint(Xpoint2)
-    yaver2 = averYpoint(Ypoint2)
-    xaver3 = averXpoint(Xpoint3)
-    yaver3 = averYpoint(Ypoint3)
-    xaver4 = averXpoint(Xpoint4)
-    yaver4 = averYpoint(Ypoint4)
+    xaver1 = averXpoint(Xpoint1, array1)
+    yaver1 = averYpoint(Ypoint1, array1)
+    xaver2 = averXpoint(Xpoint2, array2)
+    yaver2 = averYpoint(Ypoint2, array2)
+    xaver3 = averXpoint(Xpoint3, array3)
+    yaver3 = averYpoint(Ypoint3, array3)
+    xaver4 = averXpoint(Xpoint4, array4)
+    yaver4 = averYpoint(Ypoint4, array4)
     print_recoDefence(xaver1, yaver1)
     print_recoDefence(xaver2, yaver2)
     print_recoDefence(xaver3, yaver3)
@@ -312,30 +313,30 @@ def print_recoDefence(Xpoint, Ypoint):
     x1, y1 = (Xpoint - 3), (Ypoint - 3)
     x2, y2 = (Xpoint + 3), (Ypoint + 3)
 
-    canvas.create_rectangle(x1, y1, x2, y2, width=2, fill="blue")
+    canvas.create_oval(x1, y1, x2, y2, width=2, fill="powderblue")
 
 
 
 ##x좌표 평균값
-def averXpoint(XPOINT):
+def averXpoint(XPOINT, num):
     Xsum = 0
     Xaver = 0
-    for x in range(0, len(XPOINT)):
+    for x in range(0, num):
         Xsum += XPOINT[x]
     Xaver = Xsum/len(XPOINT)
     return Xaver
 
 ##y좌표 평균값
-def averYpoint(YPOINT):
+def averYpoint(YPOINT, num):
     Ysum = 0
     Yaver = 0
-    for y in range(0, len(YPOINT)):
+    for y in range(0, num):
         Ysum += YPOINT[y]
     Yaver = Ysum/len(YPOINT)
     return Yaver
 
 ##투수정보 확률
-def avermanType(manType):
+def avermanType(manType, num):
     leftType = manType.count(1)/len(manType)
     rightType = manType.count(2)/ len(manType)
 
@@ -345,7 +346,7 @@ def avermanType(manType):
         return rightType
 
 ##구종 확률
-def averballType(ballType):
+def averballType(ballType, num):
     fastball = ballType.count(1)/len(ballType)
     slider = ballType.count(2)/len(ballType)
 
