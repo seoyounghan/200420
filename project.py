@@ -292,28 +292,49 @@ def recoDefence():
             array4 = array4 + 1
 
 
-    xaver1 = averXpoint(Xpoint1, array1)
-    yaver1 = averYpoint(Ypoint1, array1)
-    xaver2 = averXpoint(Xpoint2, array2)
-    yaver2 = averYpoint(Ypoint2, array2)
-    xaver3 = averXpoint(Xpoint3, array3)
-    yaver3 = averYpoint(Ypoint3, array3)
-    xaver4 = averXpoint(Xpoint4, array4)
-    yaver4 = averYpoint(Ypoint4, array4)
-    print_recoDefence(xaver1, yaver1)
-    print_recoDefence(xaver2, yaver2)
-    print_recoDefence(xaver3, yaver3)
-    print_recoDefence(xaver4, yaver4)
+
+
+    if(array1 != 0):
+        xaver1 = averXpoint(Xpoint1, array1)
+        yaver1 = averYpoint(Ypoint1, array1)
+        print_recoDefence(xaver1, yaver1)
+    elif (array1 == 0):
+        print_recoDefence(130, 150)
+
+    if (array2 != 0):
+        xaver2 = averXpoint(Xpoint2, array2)
+        yaver2 = averYpoint(Ypoint2, array2)
+        print_recoDefence(xaver2, yaver2)
+    elif (array2 == 0):
+        print_recoDefence(280, 100)
+
+
+    if (array3 != 0):
+        xaver3 = averXpoint(Xpoint3, array3)
+        yaver3 = averYpoint(Ypoint3, array3)
+        print_recoDefence(xaver3, yaver3)
+    elif (array3 == 0):
+        print_recoDefence(430, 150)
+
+
+    if (array4 != 0):
+        xaver4 = averXpoint(Xpoint4, array4)
+        yaver4 = averYpoint(Ypoint4, array4)
+        print_recoDefence(xaver4, yaver4)
+    elif (array4 == 0):
+        print_recoDefence(180, 250)
+
+
 
     manaver = avermanType(manType)
     ballaver = averballType(ballType)
 
 
 def print_recoDefence(Xpoint, Ypoint):
-    x1, y1 = (Xpoint - 3), (Ypoint - 3)
-    x2, y2 = (Xpoint + 3), (Ypoint + 3)
+    x1, y1 = (Xpoint - 5), (Ypoint - 5)
+    x2, y2 = (Xpoint + 5), (Ypoint + 5)
 
-    canvas.create_oval(x1, y1, x2, y2, width=2, fill="powderblue")
+    canvas.create_oval(x1, y1, x2, y2, fill="powderblue")
 
 
 
@@ -336,7 +357,7 @@ def averYpoint(YPOINT, num):
     return Yaver
 
 ##투수정보 확률
-def avermanType(manType, num):
+def avermanType(manType):
     leftType = manType.count(1)/len(manType)
     rightType = manType.count(2)/ len(manType)
 
@@ -346,7 +367,7 @@ def avermanType(manType, num):
         return rightType
 
 ##구종 확률
-def averballType(ballType, num):
+def averballType(ballType):
     fastball = ballType.count(1)/len(ballType)
     slider = ballType.count(2)/len(ballType)
 
