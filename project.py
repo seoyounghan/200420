@@ -18,13 +18,6 @@ photo = PhotoImage(file = "야구장사진.gif")
 label_image = Label(window, image = photo)
 
 #메뉴 설정
-fileMenu=Menu(mainMenu)
-helpMenu=Menu(mainMenu)
-
-mainMenu.add_cascade(label="파일", menu=fileMenu)
-fileMenu.add_command(label="입력")
-fileMenu.add_separator() #메뉴 구분선
-fileMenu.add_command(label="분석")
 def help_top():
     help_w = Toplevel(window)
     help_w.title("도움말")
@@ -53,8 +46,18 @@ def help_top():
                                 ""
                                 "투수 이름과 타자 이름을 입력한 뒤 프로그램 상단의 '수비 추천' 버튼을 눌러주십시오.\n\n\n")
     label_w.pack()
-mainMenu.add_cascade(label="Help", menu=helpMenu)
-helpMenu.add_command(label="도움말", command=help_top)
+
+def close():
+    window.quit()
+    window.destroy()
+
+fileMenu=Menu(mainMenu)
+helpMenu=Menu(mainMenu)
+
+mainMenu.add_cascade(label="프로그램", menu=fileMenu)
+fileMenu.add_command(label="도움말", command=help_top)
+fileMenu.add_separator() #메뉴 구분선
+fileMenu.add_command(label="종료", command=close)
 
 #변수설정
 pitcherName =None
