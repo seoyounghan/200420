@@ -17,6 +17,45 @@ window.config(menu = mainMenu, background="linen")
 photo = PhotoImage(file = "야구장사진.gif")
 label_image = Label(window, image = photo)
 
+#메뉴 설정
+fileMenu=Menu(mainMenu)
+helpMenu=Menu(mainMenu)
+
+mainMenu.add_cascade(label="파일", menu=fileMenu)
+fileMenu.add_command(label="입력")
+fileMenu.add_separator() #메뉴 구분선
+fileMenu.add_command(label="분석")
+def help_top():
+    help_w = Toplevel(window)
+    help_w.title("도움말")
+    help_w.geometry("500x500")
+
+    label_w =Label(help_w, text="\n\n\n아마추어를 위한 타구 분석 프로그램\n\n "
+                                "입력\n"
+                                "주어진 항목들을 입력하여 주십시오.\n"
+                                "투수 이름과 타자 이름을 입력한 뒤 입력창 옆 '입력' 버튼을 눌러주십시오.\n"
+                                "투수 정보 선택, 구종 선택, 타격 결과의 선택지를 선택하여주십시오.\n"
+                                "프로그램의 야구장 그림에 공이 떨어진 위치를 선택하여 주십시오.\n"
+                                "위의 정보들을 모두 입력했을경우 프로그램 상단의 '입력' 버튼을 눌러주십시오.\n\n"
+                                ""
+                                "분석\n"
+                                "분석 항목은\n"
+                                "1. 투수 정보 + 타자 이름\n"
+                                "2. 구종+타자 이름\n"
+                                "3. 투수 이름+타자 이름\n"
+                                "의 데이터를 매칭하여 공이 떨어진 위치를 보여줍니다.\n\n"
+                                ""
+                                "따라서 위와 같은 정보를 입력한 뒤 프로그램 상단의 '분석' 버튼을 눌러주십시오.\n\n"
+                                ""
+                                "수비 추천\n"
+                                "수비 추천 항목은 투수 이름 + 타자 이름을\n"
+                                "입력받아 구역별 수비수 위치를 추천해줍니다.\n\n"
+                                ""
+                                "투수 이름과 타자 이름을 입력한 뒤 프로그램 상단의 '수비 추천' 버튼을 눌러주십시오.\n\n\n")
+    label_w.pack()
+mainMenu.add_cascade(label="Help", menu=helpMenu)
+helpMenu.add_command(label="도움말", command=help_top)
+
 #변수설정
 pitcherName =None
 pitcherType =None
@@ -177,6 +216,30 @@ def clickbutton18(): #삼진
     battingRes = 9
     global battingRestext
     battingRestext = "삼진"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton18(): #삼진
+    global battingRes
+    battingRes = 9
+    global battingRestext
+    battingRestext = "삼진"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton19(): #희생번트
+    global battingRes
+    battingRes = 10
+    global battingRestext
+    battingRestext = "희생번트"
+    print(battingRes)
+    print(battingRestext)
+
+def clickbutton20(): #땅볼
+    global battingRes
+    battingRes = 11
+    global battingRestext
+    battingRestext = "땅볼"
     print(battingRes)
     print(battingRestext)
 
@@ -491,17 +554,6 @@ def getRGB() :
     b = random.random()
     return(r, g, b)
 
-#메뉴 설정
-fileMenu=Menu(mainMenu)
-helpMenu=Menu(mainMenu)
-
-mainMenu.add_cascade(label="파일", menu=fileMenu)
-fileMenu.add_command(label="입력")
-fileMenu.add_separator() #메뉴 구분선
-fileMenu.add_command(label="분석")
-
-mainMenu.add_cascade(label="Help", menu=helpMenu)
-helpMenu.add_command(label="도움말")
 
 
 #입력 정보
@@ -562,18 +614,24 @@ button17=Button(window, text=" 희생플라이", relief="groove", bg="lavender",
 button17.place(x=890, y=150)
 button18=Button(window, text="     삼진     ", relief="groove", bg="lavender", command=clickbutton18)
 button18.place(x=800, y=185)
+button18=Button(window, text="     삼진     ", relief="groove", bg="lavender", command=clickbutton18)
+button18.place(x=800, y=185)
+button18=Button(window, text="  희생번트  ", relief="groove", bg="lavender", command=clickbutton19)
+button18.place(x=890, y=185)
+button18=Button(window, text="     땅볼     ", relief="groove", bg="lavender", command=clickbutton19)
+button18.place(x=800, y=220)
 
 
 label6=Label(window, text="타율", background="linen")
-label6.place(x=800, y=230)
+label6.place(x=800, y=260)
 label7=Label(window, text="장타율", background="linen")
-label7.place(x=800, y=260)
+label7.place(x=800, y=290)
 label8=Label(window, text="OPS", background="linen")
-label8.place(x=800, y=290)
+label8.place(x=800, y=320)
 label9=Label(window, text="BABIP", background="linen")
-label9.place(x=800, y=320)
+label9.place(x=800, y=350)
 label10=Label(window, text="WAR", background="linen")
-label10.place(x=800, y=350)
+label10.place(x=800, y=380)
 
 
 
