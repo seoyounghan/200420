@@ -71,6 +71,26 @@ pitchTypetext=None
 battingRes = None
 battingRestext = None
 
+base1=0
+base2=0
+base3=0
+base4=0
+OPS=0
+OBP=0
+BABIP=0
+SLG=0
+batAVG=0
+fb=0
+ball4=0
+hitting=0
+hitsum=0
+batSum=0
+hbp=0
+sto=0
+gb=0
+sacF=0
+
+
 #분석 화면 사용 변수 선언
 mainpointX = 279 #분포도에서 기준이 되는 시작 좌표의 값
 mainpointY = 446 #y값
@@ -624,17 +644,163 @@ button18.place(x=890, y=185)
 button18=Button(window, text="     땅볼     ", relief="groove", bg="lavender", command=clickbutton19)
 button18.place(x=800, y=220)
 
+label6=Label(window, text="타율:"+str(batAVG), background="linen")
+label6.place(x=800, y=265)
+label7=Label(window, text="장타율:"+str(SLG), background="linen")
+label7.place(x=800, y=295)
+label8=Label(window, text="OPS:"+str(OPS), background="linen")
+label8.place(x=800, y=325)
+label9=Label(window, text="BABIP:"+str(BABIP), background="linen")
+label9.place(x=800, y=355)
+label10=Label(window, text="출루율:"+str(OBP), background="linen")
+label10.place(x=800, y=385)
 
-label6=Label(window, text="타율", background="linen")
-label6.place(x=800, y=260)
-label7=Label(window, text="장타율", background="linen")
-label7.place(x=800, y=290)
-label8=Label(window, text="OPS", background="linen")
-label8.place(x=800, y=320)
-label9=Label(window, text="BABIP", background="linen")
-label9.place(x=800, y=350)
-label10=Label(window, text="WAR", background="linen")
-label10.place(x=800, y=380)
+#db 불러와서 맵핑
+def Dataa():
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM userData")
+
+
+def bares1():
+    global base1
+    sql=""
+    sql="SELECT count(IF(battingRes=1 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    base1=cur.fetchone()
+
+def bares2():
+    global base2
+    sql=""
+    sql="SELECT count(IF(battingRes=2 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    base2=cur.fetchone()
+
+def bares3():
+    global base3
+    sql=""
+    sql="SELECT count(IF(battingRes=3 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    base3=cur.fetchone()
+
+def bares4():
+    global base4
+    sql=""
+    sql="SELECT count(IF(battingRes=4 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    base4=cur.fetchone()
+
+def bares5():
+    global ball4
+    sql=""
+    sql="SELECT count(IF(battingRes=5 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    ball4=cur.fetchone()
+
+def bares6():
+    global hbp
+    sql=""
+    sql="SELECT count(IF(battingRes=6 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    hbp=cur.fetchone()
+
+def bares7():
+    global fb
+    sql=""
+    sql="SELECT count(IF(battingRes=7 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    fb=cur.fetchone()
+
+def bares8():
+    global sacF
+    sql=""
+    sql="SELECT count(IF(battingRes=8 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    sacF=cur.fetchone()
+    con.close()
+
+def bares9():
+    global sto
+    sql=""
+    sql="SELECT count(IF(battingRes=9 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    sto=cur.fetchone()
+    con.close()
+
+def bares10():
+    global sacB
+    sql=""
+    sql="SELECT count(IF(battingRes=9 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    sacB=cur.fetchone()
+    con.close()
+
+def bares10():
+    global gb
+    sql=""
+    sql="SELECT count(IF(battingRes=9 AND batterName='"+batterName+"')) FROM userData"
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    gb=cur.fetchone()
+    con.close()
+
+#타율 계산
+batAVG=0.0
+hitting=base1+base2+base3+base4
+hitSum=hitting+fb+sto+gb
+if hitSum==0:
+   batAVG=0
+else:
+    batAVG=hitting/hitSum #안타개수/타수
+
+
+#출루율 (obp)
+if batSum+ball4+hbp+sacF == 0:
+    OBP=0
+else:
+    OBP=(hitSum+ball4+hbp)/(batSum+ball4+hbp+sacF)
+
+#(안타 개수 + 베이스온볼스 + 사구) ÷ (타수 + 베이스온볼스 + 사구 + 희생플라이)
+
+#장타율 slg
+if hitSum==0:
+    SLG=0
+else :
+    SLG={base1+2*(2*base2)+3*(base3)+4*(base4)}/hitSum
+
+#ops
+OPS=OBP+SLG
+
+#BABIP
+if hitSum-so-base4+scarf == 0:
+    BABIP=0
+else :
+    BABIP=(hitting-base4)/(hitSum-so-base4+scarf)
+
+
+
+
 
 
 
