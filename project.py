@@ -242,13 +242,6 @@ def clickbutton18(): #삼진
     print(battingRes)
     print(battingRestext)
 
-def clickbutton18(): #삼진
-    global battingRes
-    battingRes = 9
-    global battingRestext
-    battingRestext = "삼진"
-    print(battingRes)
-    print(battingRestext)
 
 def clickbutton19(): #희생번트
     global battingRes
@@ -273,7 +266,7 @@ def clickbutton20(): #땅볼
 ##select함수
 def selectData(sql):
     #XPOINT, YPOINT = [], []
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -339,7 +332,7 @@ def recoDefence():
 
     manType, ballType = [], []
     point = []
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
     cur = con.cursor()
     cur.execute(sql)
     count = 0
@@ -492,6 +485,215 @@ def delete_display():
     canvas.create_image(280, 250, image=photo)
 
 
+def bares1():
+    global base1
+    bares1= []
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=1 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares1=cur.fetchone()
+    base1= bares1[0]
+    con.close()
+
+def bares2():
+    global base2
+    bares2=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=2 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares2=cur.fetchone()
+    base2 = bares2[0]
+    con.close()
+
+def bares3():
+    global base3
+    bares3=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=3 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares3 = cur.fetchone()
+    base3 = bares3[0]
+    con.close()
+
+def bares4():
+    global base4
+    bares4 = []
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=4 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares4 = cur.fetchone()
+    base4 = bares4[0]
+    con.close()
+
+def bares5():
+    global ball4
+    bares5=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=5 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares5 = cur.fetchone()
+    ball4 = bares5[0]
+    con.close()
+
+def bares6():
+    global hbp
+    bares6=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=6 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares6 = cur.fetchone()
+    hbp = bares6[0]
+    con.close()
+
+def bares7():
+    global fb
+    bares7=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=7 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares7 = cur.fetchone()
+    fb = bares7[0]
+    con.close()
+
+def bares8():
+    global sacF
+    bares8=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=8 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares8 = cur.fetchone()
+    sacF = bares8[0]
+    con.close()
+
+def bares9():
+    global sto
+    bares9=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=9 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares9 = cur.fetchone()
+    sto = bares9[0]
+    con.close()
+
+def bares10():
+    global sacB
+    bares10=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=10 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares10 = cur.fetchone()
+    sacB = bares10[0]
+    con.close()
+
+def bares11():
+    global gb
+    bares11=[]
+    sql=""
+    sql="SELECT count(*) FROM userData WHERE battingres=11 AND batterName='" + batterName+"'"
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    cur = con.cursor()
+    cur.execute(sql)
+    bares11 = cur.fetchone()
+    gb = bares11[0]
+    con.close()
+
+def calcul():
+#타율 계산
+    global batAVG
+    batAVG=0.0
+    hitting=base1+base2+base3+base4
+    hitSum=hitting+fb+sto+gb
+
+    if hitSum==0:
+        batAVG=0
+    else:
+        batAVG=hitting/hitSum #안타개수/타수
+        print(batAVG)
+
+
+#출루율 (obp)
+    global OBP
+    OBP = 0
+    if batSum+ball4+hbp+sacF == 0:
+        OBP=0
+    else:
+        OBP=(hitSum+ball4+hbp)/(batSum+ball4+hbp+sacF)
+
+#(안타 개수 + 베이스온볼스 + 사구) ÷ (타수 + 베이스온볼스 + 사구 + 희생플라이)
+
+#장타율 slg
+    global SLG
+    SLG = 0
+    if hitSum==0:
+        SLG=0
+    else :
+        SLG=(base1+2*(2*base2)+3*(base3)+4*(base4))/hitSum
+
+#ops
+    global OPS
+    OPS = 0
+    OPS=OBP+SLG
+
+#BABIP
+    global BABIP
+    BABIP = 0
+
+    if hitSum-sto-base4+sacF == 0:
+        BABIP=0
+    else :
+        BABIP=(hitting-base4)/(hitSum-sto-base4+sacF)
+
+
+def battingresdata():
+
+    bares1()
+    bares2()
+    bares3()
+    bares4()
+    bares5()
+    bares6()
+    bares7()
+    bares8()
+    bares9()
+    bares10()
+    bares11()
+
+    calcul()
+
+    label6 = Label(window, text="타율:" + str(round(batAVG,5)), background="linen")
+    label6.place(x=800, y=265)
+    label7 = Label(window, text="장타율:" + str(round(SLG,5)), background="linen")
+    label7.place(x=800, y=295)
+    label8 = Label(window, text="OPS:" + str(round(OPS,5)), background="linen")
+    label8.place(x=800, y=325)
+    label9 = Label(window, text="BABIP:" + str(round(BABIP,5)), background="linen")
+    label9.place(x=800, y=355)
+    label10 = Label(window, text="출루율:" + str(round(OBP,5)), background="linen")
+    label10.place(x=800, y=385)
+
+
+
+
 
 
 def input_messageask():
@@ -555,6 +757,7 @@ def analyse_messageask():
         if ans == "yes":
             delete_display()
             analyse_pitcher()
+            battingresdata()
             resetVari()
 
 
@@ -576,6 +779,8 @@ def getRGB() :
     g = random.random()
     b = random.random()
     return(r, g, b)
+
+
 
 
 
@@ -644,164 +849,23 @@ button18.place(x=890, y=185)
 button18=Button(window, text="     땅볼     ", relief="groove", bg="lavender", command=clickbutton19)
 button18.place(x=800, y=220)
 
-label6=Label(window, text="타율:"+str(batAVG), background="linen")
+
+label6 = Label(window, text="타율:" + str(batAVG), background="linen")
 label6.place(x=800, y=265)
-label7=Label(window, text="장타율:"+str(SLG), background="linen")
+label7 = Label(window, text="장타율:" + str(SLG), background="linen")
 label7.place(x=800, y=295)
-label8=Label(window, text="OPS:"+str(OPS), background="linen")
+label8 = Label(window, text="OPS:" + str(OPS), background="linen")
 label8.place(x=800, y=325)
-label9=Label(window, text="BABIP:"+str(BABIP), background="linen")
+label9 = Label(window, text="BABIP:" + str(BABIP), background="linen")
 label9.place(x=800, y=355)
-label10=Label(window, text="출루율:"+str(OBP), background="linen")
+label10 = Label(window, text="출루율:" + str(OBP), background="linen")
 label10.place(x=800, y=385)
 
 #db 불러와서 맵핑
 def Dataa():
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
     cur = con.cursor()
     cur.execute("SELECT * FROM userData")
-
-
-def bares1():
-    global base1
-    sql=""
-    sql="SELECT count(IF(battingRes=1 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    base1=cur.fetchone()
-
-def bares2():
-    global base2
-    sql=""
-    sql="SELECT count(IF(battingRes=2 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    base2=cur.fetchone()
-
-def bares3():
-    global base3
-    sql=""
-    sql="SELECT count(IF(battingRes=3 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    base3=cur.fetchone()
-
-def bares4():
-    global base4
-    sql=""
-    sql="SELECT count(IF(battingRes=4 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    base4=cur.fetchone()
-
-def bares5():
-    global ball4
-    sql=""
-    sql="SELECT count(IF(battingRes=5 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    ball4=cur.fetchone()
-
-def bares6():
-    global hbp
-    sql=""
-    sql="SELECT count(IF(battingRes=6 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    hbp=cur.fetchone()
-
-def bares7():
-    global fb
-    sql=""
-    sql="SELECT count(IF(battingRes=7 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    fb=cur.fetchone()
-
-def bares8():
-    global sacF
-    sql=""
-    sql="SELECT count(IF(battingRes=8 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    sacF=cur.fetchone()
-    con.close()
-
-def bares9():
-    global sto
-    sql=""
-    sql="SELECT count(IF(battingRes=9 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    sto=cur.fetchone()
-    con.close()
-
-def bares10():
-    global sacB
-    sql=""
-    sql="SELECT count(IF(battingRes=9 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    sacB=cur.fetchone()
-    con.close()
-
-def bares10():
-    global gb
-    sql=""
-    sql="SELECT count(IF(battingRes=9 AND batterName='"+batterName+"')) FROM userData"
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
-    cur = con.cursor()
-    cur.execute(sql)
-    gb=cur.fetchone()
-    con.close()
-
-#타율 계산
-batAVG=0.0
-hitting=base1+base2+base3+base4
-hitSum=hitting+fb+sto+gb
-if hitSum==0:
-   batAVG=0
-else:
-    batAVG=hitting/hitSum #안타개수/타수
-
-
-#출루율 (obp)
-if batSum+ball4+hbp+sacF == 0:
-    OBP=0
-else:
-    OBP=(hitSum+ball4+hbp)/(batSum+ball4+hbp+sacF)
-
-#(안타 개수 + 베이스온볼스 + 사구) ÷ (타수 + 베이스온볼스 + 사구 + 희생플라이)
-
-#장타율 slg
-if hitSum==0:
-    SLG=0
-else :
-    SLG={base1+2*(2*base2)+3*(base3)+4*(base4)}/hitSum
-
-#ops
-OPS=OBP+SLG
-
-#BABIP
-if hitSum-so-base4+scarf == 0:
-    BABIP=0
-else :
-    BABIP=(hitting-base4)/(hitSum-so-base4+scarf)
-
-
-
-
-
 
 
 #데이터베이스 설정
@@ -809,7 +873,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -824,7 +888,7 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
