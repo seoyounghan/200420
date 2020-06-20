@@ -725,6 +725,7 @@ def analyse_messageask():
         if ans == "yes":
             delete_display()
             analyse_Leftpitcher()
+            battingresdata()
             resetVari()
 
 
@@ -733,6 +734,7 @@ def analyse_messageask():
         if ans == "yes":
             delete_display()
             analyse_Rightpitcher()
+            battingresdata()
             resetVari()
 
 
@@ -741,6 +743,7 @@ def analyse_messageask():
         if ans == "yes":
             delete_display()
             analyse_Fastball()
+            battingresdata()
             resetVari()
 
 
@@ -749,6 +752,7 @@ def analyse_messageask():
         if ans == "yes":
             delete_display()
             analyse_Slider()
+            battingresdata()
             resetVari()
 
 
