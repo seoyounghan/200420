@@ -266,7 +266,7 @@ def clickbutton20(): #땅볼
 ##select함수
 def selectData(sql):
     #XPOINT, YPOINT = [], []
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     while (True):
@@ -332,7 +332,7 @@ def recoDefence():
 
     manType, ballType = [], []
     point = []
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     count = 0
@@ -490,7 +490,7 @@ def bares1():
     bares1= []
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=1 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares1=cur.fetchone()
@@ -502,7 +502,7 @@ def bares2():
     bares2=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=2 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares2=cur.fetchone()
@@ -514,7 +514,7 @@ def bares3():
     bares3=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=3 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares3 = cur.fetchone()
@@ -526,7 +526,7 @@ def bares4():
     bares4 = []
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=4 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares4 = cur.fetchone()
@@ -538,7 +538,7 @@ def bares5():
     bares5=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=5 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares5 = cur.fetchone()
@@ -550,7 +550,7 @@ def bares6():
     bares6=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=6 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares6 = cur.fetchone()
@@ -562,7 +562,7 @@ def bares7():
     bares7=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=7 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares7 = cur.fetchone()
@@ -574,7 +574,7 @@ def bares8():
     bares8=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=8 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares8 = cur.fetchone()
@@ -586,7 +586,7 @@ def bares9():
     bares9=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=9 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares9 = cur.fetchone()
@@ -598,7 +598,7 @@ def bares10():
     bares10=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=10 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares10 = cur.fetchone()
@@ -610,7 +610,7 @@ def bares11():
     bares11=[]
     sql=""
     sql="SELECT count(*) FROM userData WHERE battingres=11 AND batterName='" + batterName+"'"
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute(sql)
     bares11 = cur.fetchone()
@@ -846,11 +846,9 @@ button17=Button(window, text=" 희생플라이", relief="groove", bg="lavender",
 button17.place(x=890, y=150)
 button18=Button(window, text="     삼진     ", relief="groove", bg="lavender", command=clickbutton18)
 button18.place(x=800, y=185)
-button18=Button(window, text="     삼진     ", relief="groove", bg="lavender", command=clickbutton18)
-button18.place(x=800, y=185)
 button18=Button(window, text="  희생번트  ", relief="groove", bg="lavender", command=clickbutton19)
 button18.place(x=890, y=185)
-button18=Button(window, text="     땅볼     ", relief="groove", bg="lavender", command=clickbutton19)
+button18=Button(window, text="     땅볼     ", relief="groove", bg="lavender", command=clickbutton20)
 button18.place(x=800, y=220)
 
 
@@ -867,7 +865,7 @@ label10.place(x=800, y=385)
 
 #db 불러와서 맵핑
 def Dataa():
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")
     cur = con.cursor()
     cur.execute("SELECT * FROM userData")
 
@@ -877,7 +875,7 @@ def SaveLine():  ##데이터베이스에 데이터 저장
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
@@ -892,7 +890,7 @@ def PrintData():
     con, cur = None, None
     sql = ""
 
-    con = sqlite3.connect(r"C:\Users\82102\PycharmProjects\200420/userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
     cur = con.cursor()
 
