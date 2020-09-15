@@ -16,23 +16,16 @@ photo = PhotoImage(file="야구장사진.gif")
 label_image = Label(window, image=photo, bg="PINK")
 
 #변수설정
-pitcherName =""
-pitcherType =""
-pitchType =""
-batterName =""
-xPoint =""
-yPoint =""
-pitcherTypetext=""
-pitchTypetext=""
+pitcherName =None
+pitcherType =None
+pitchType =None
+batterName =None
+xPoint =None
+yPoint =None
+pitcherTypetext=None
+pitchTypetext=None
 
 #데이터베이스 설정
-con, cur = None, None
-sql = ""
-
-con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
-con = sqlite3.connect(r"C:\Users\Owner\Desktop\program\sqlite\userData")  # DB가 저장된 폴더까지 지정
-
-cur = con.cursor()
 
 #캔버스 설정
 canvas = Canvas(window, bd=2, width=560, height=400)
@@ -97,15 +90,46 @@ def clickbutton9(): #타자 이름
 
 #맨 위 입력 버튼으로 데이터베이스에 데이터 저장
 
-def clickbutton1(): #입력 버튼
-    print("안녕")
 
-#    if ans==True:
-#        SaveLine()
-#        canvas.delete()
+def input_messageask():
+    global pitcherName
+    global pitcherType
+    global pitchType
+    global batterName
+    global xPoint
+    global yPoint
+    global pitcherTypetext
+    global pitchTypetext
 
-def messageask():
-    messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+    ans=messagebox.askquestion("확인", "투수 이름 : " + pitcherName  + "\n투수 정보 : " + pitcherTypetext + "\n구종 : " + pitchTypetext + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+    if ans== "yes":
+        canvas.delete("all")
+        canvas.create_image(280, 200, image=photo)
+        print("확인") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
+        SaveLine()
+        print("저장됨") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
+        PrintData() #데이터가 제대로 저장됐는지 확인하기 위해서 추가한 함수
+        print("출력") #단계별로 코드 실행되는지 확인하기 위해서 추가한 코드
+        pitcherName = None
+        pitcherType = None
+        pitchType = None
+        batterName = None
+        xPoint = None
+        yPoint = None
+        pitcherTypetext = None
+        pitchTypetext = None
+
+
+
+def analyse_messageask():
+    if pitcherType == 1:
+        ans=messagebox.askquestion("확인", "투수 정보: 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+            if ans== "yes":
+                canvas.delete("all")
+
+    elif pitcherType == 2:
+        ans=messagebox.askquestion("확인", "투수 정보: 좌투" + "\n타자 이름 : " + batterName + "\n이 맞습니까?")
+
 
 
 #메뉴 설정
@@ -122,9 +146,9 @@ helpMenu.add_command(label="도움말")
 
 
 #입력 정보
-button1=Button(window, text="입력", relief="groove", bg="skyblue", command=messageask)
+button1=Button(window, text="입력", relief="groove", bg="skyblue", command=input_messageask)
 button1.place(x=570, y=20)
-button2=Button(window, text="분석", relief="groove", bg="red")
+button2=Button(window, text="분석", relief="groove", bg="red", command=analyse_messageask)
 button2.place(x=610, y=20)
 button3=Button(window, text="수비 추천", relief="groove", bg="gray")
 button3.place(x=650, y=20)
@@ -161,12 +185,42 @@ button9.place(x=690, y=330)
 
 #데이터베이스 설정
 def SaveLine():  ##데이터베이스에 데이터 저장
+    con, cur = None, None
+    sql = ""
 
-    sql = "INSERT INTO userData VALUES(" + pitcherName + "," + pitcherType + "," + pitchType + "," + batterName + "," + xPoint + "," + yPoint + ");"
+    con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
 
+    cur = con.cursor()
+
+    sql = "INSERT INTO userData VALUES('" + str(pitcherName) + "', " + str(pitcherType) + "," + str(
+        pitchType) + ", '" + str(batterName) + "', " + str(xPoint) + "," + str(yPoint) + ")"
     cur.execute(sql)
-
     con.commit()
+    con.close()
+
+def PrintData():
+    con, cur = None, None
+    sql = ""
+
+    con = sqlite3.connect("userData")  # DB가 저장된 폴더까지 지정
+    con = sqlite3.connect(r"C:\sqlite\userData")  # DB가 저장된 폴더까지 지정
+
+    cur = con.cursor()
+
+    cur.execute("SELECT * FROM userData")
+    print("타자 이름     투수 정보     구종      투수 이름")
+    print("-----------------------------------------------")
+    data1, data2, data3, data4="","","",""
+    while(True):
+        row=cur.fetchone()
+        if row==None:
+            break;
+        data1=row[0]
+        data2=row[1]
+        data3=row[2]
+        data4=row[3]
+        print("%5s   %d    %d    %15s"%(data1, data2, data3, data4))
     con.close()
 
 

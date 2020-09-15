@@ -35,8 +35,8 @@
       <recent name="C:\Users\82102\PycharmProjects\200420" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.python">
-    <configuration name="7주차Quiz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.project">
+    <configuration name="DBSELECT" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +48,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/7주차Quiz.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DBSELECT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -57,7 +57,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="9주차퀴즈" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="battingresdataadd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,7 +69,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/9주차퀴즈.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/battingresdataadd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,19 +78,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Quiz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="project" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Quiz.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,19 +99,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Quiz08" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="sun" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Quiz08.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sun.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,19 +120,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="python" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="t" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="200420" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.python" />
-        <item itemvalue="Python.9주차퀴즈" />
-        <item itemvalue="Python.Quiz08" />
-        <item itemvalue="Python.7주차Quiz" />
-        <item itemvalue="Python.Quiz" />
+        <item itemvalue="Python.project" />
+        <item itemvalue="Python.DBSELECT" />
+        <item itemvalue="Python.battingresdataadd" />
+        <item itemvalue="Python.sun" />
+        <item itemvalue="Python.t" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +260,91 @@
       <option name="project" value="LOCAL" />
       <updated>1590233501986</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="0525 pm06:09 양가연">
+      <created>1590397802135</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590397802135</updated>
+    </task>
+    <task id="LOCAL-00016" summary="0525 pm06:09 양가연">
+      <created>1590989083066</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590989083066</updated>
+    </task>
+    <task id="LOCAL-00017" summary="0525 pm06:09 양가연">
+      <created>1590990163161</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1590990163161</updated>
+    </task>
+    <task id="LOCAL-00018" summary="0525 pm06:09 양가연">
+      <created>1590990236459</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1590990236459</updated>
+    </task>
+    <task id="LOCAL-00019" summary="0525 pm06:09 양가연">
+      <created>1590992357252</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590992357252</updated>
+    </task>
+    <task id="LOCAL-00020" summary="0607 분포도 출력 변경">
+      <created>1591497877912</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591497877912</updated>
+    </task>
+    <task id="LOCAL-00021" summary="0607 데이터베이스 수정">
+      <created>1591499348169</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591499348169</updated>
+    </task>
+    <task id="LOCAL-00022" summary="0607 select수정">
+      <created>1591523702223</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591523702223</updated>
+    </task>
+    <task id="LOCAL-00023" summary="0607 select수정">
+      <created>1591544160879</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591544160879</updated>
+    </task>
+    <task id="LOCAL-00024" summary="타격결과구현">
+      <created>1592661924074</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1592661924075</updated>
+    </task>
+    <task id="LOCAL-00025" summary="타격결과구현">
+      <created>1592661950738</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1592661950738</updated>
+    </task>
+    <task id="LOCAL-00026" summary="타격결과구현">
+      <created>1592662219049</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1592662219049</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,57 +356,96 @@
     <MESSAGE value="0522 pm10;26" />
     <MESSAGE value="0522 pm10;27" />
     <MESSAGE value="0523 pm08:31" />
-    <option name="LAST_COMMIT_MESSAGE" value="0523 pm08:31" />
+    <MESSAGE value="0525 pm06:09 양가연" />
+    <MESSAGE value="0607 분포도 출력 변경" />
+    <MESSAGE value="0607 데이터베이스 수정" />
+    <MESSAGE value="0607 select수정" />
+    <MESSAGE value="0608 delete함수 확인" />
+    <MESSAGE value="타격결과구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="타격결과구현" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="105" key="#7주차Quiz" timestamp="1588570230564">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="560" y="105" key="#7주차Quiz/0.0.1707.1027@0.0.1707.1027" timestamp="1588570230564" />
+    <state x="560" y="105" key="#DBSELECT" timestamp="1590983345766">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="560" y="105" key="#DBSELECT/0.0.1707.1027@0.0.1707.1027" timestamp="1590983345766" />
     <state x="739" y="376" key="#Notifications" timestamp="1588569637948">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="739" y="376" key="#Notifications/0.0.1707.1027@0.0.1707.1027" timestamp="1588569637948" />
-    <state x="475" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590153771751">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="528" y="233" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590985455208">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="396" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587370581460" />
     <state x="475" y="187" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1590153771751" />
-    <state x="352" y="0" key="CommitChangelistDialog2" timestamp="1590233500620">
+    <state x="528" y="233" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1590985455208" />
+    <state x="560" y="105" key="#project" timestamp="1590992320298">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="560" y="105" key="#project/0.0.1707.1027@0.0.1707.1027" timestamp="1590992320298" />
+    <state x="931" y="129" key="#sun" timestamp="1591483948832">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="931" y="129" key="#sun/0.0.1707.1027@0.0.1707.1027" timestamp="1591483948832" />
+    <state x="560" y="105" key="#t" timestamp="1590994468800">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="560" y="105" key="#t/0.0.1707.1027@0.0.1707.1027" timestamp="1590994468800" />
+    <state x="352" y="0" width="760" height="996" key="CommitChangelistDialog2" timestamp="1592662217277">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="293" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1587368851818" />
-    <state x="352" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590233500620" />
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1588570678332" />
+    <state x="352" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592662217277" />
+    <state x="391" y="0" width="760" height="996" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1591499346546" />
     <state x="117" y="92" key="DiffContextDialog" timestamp="1587391690565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="117" y="92" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1587391690565" />
-    <state x="548" y="149" key="FileChooserDialogImpl" timestamp="1590235274520">
+    <state x="548" y="149" key="FileChooserDialogImpl" timestamp="1592301526664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590235274520" />
+    <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592301526664" />
     <state x="609" y="186" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1588570791840" />
-    <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1590333062866">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1592666396658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590333062866" />
-    <state width="1685" height="59" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
-    <state width="757" height="210" key="GridCell.Tab.0.center" timestamp="1590333062865">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592666396658" />
+    <state width="1685" height="175" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1592666396658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590333062865" />
-    <state width="1685" height="59" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
-    <state width="757" height="210" key="GridCell.Tab.0.left" timestamp="1590333062863">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592666396658" />
+    <state width="1685" height="175" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1592666396658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590333062863" />
-    <state width="1685" height="59" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
-    <state width="757" height="210" key="GridCell.Tab.0.right" timestamp="1590333062865">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592666396658" />
+    <state width="1685" height="175" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1592666396658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590333062865" />
-    <state width="1685" height="59" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1588570291178" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592666396658" />
+    <state width="1685" height="175" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1591504441032" />
+    <state width="1685" height="94" key="GridCell.Tab.1.bottom" timestamp="1591485417299">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1685" height="94" key="GridCell.Tab.1.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1591485417299" />
+    <state width="1685" height="94" key="GridCell.Tab.1.center" timestamp="1591485417299">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1685" height="94" key="GridCell.Tab.1.center/0.0.1707.1027@0.0.1707.1027" timestamp="1591485417299" />
+    <state width="1685" height="94" key="GridCell.Tab.1.left" timestamp="1591485417299">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1685" height="94" key="GridCell.Tab.1.left/0.0.1707.1027@0.0.1707.1027" timestamp="1591485417299" />
+    <state width="1685" height="94" key="GridCell.Tab.1.right" timestamp="1591485417299">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1685" height="94" key="GridCell.Tab.1.right/0.0.1707.1027@0.0.1707.1027" timestamp="1591485417299" />
     <state x="147" y="61" key="MergeDialog" timestamp="1587389697013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -339,22 +462,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="50" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587386789734" />
-    <state x="280" y="108" key="Vcs.Push.Dialog.v2" timestamp="1590233506317">
+    <state x="280" y="108" key="Vcs.Push.Dialog.v2" timestamp="1592662222463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1587370624189" />
     <state x="233" y="94" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1587368902541" />
-    <state x="280" y="108" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590233506317" />
-    <state x="311" y="135" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1588570694183" />
-    <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588569592486">
+    <state x="280" y="108" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592662222463" />
+    <state x="311" y="135" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1591497883130" />
+    <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590990187442">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="570" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587389663743" />
-    <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1027@0.0.1707.1027" timestamp="1588569592486" />
-    <state x="484" y="199" key="git4idea.merge.GitPullDialog" timestamp="1590332964536">
+    <state x="633" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1027@0.0.1707.1027" timestamp="1590990187442" />
+    <state x="484" y="199" key="git4idea.merge.GitPullDialog" timestamp="1592656225388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="484" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590332964536" />
+    <state x="484" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1592656225388" />
     <state x="684" y="305" key="svn.repositoryBrowser" timestamp="1588570648667">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
